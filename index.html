@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="es" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>YOA PRO · Estudio de diseño web en la Costa del Sol</title>
+  <meta name="description" content="YOA PRO diseña, publica y mantiene webs para negocios de la Costa del Sol. Recorre nuestra galería de proyectos en 3D." />
+  <meta name="theme-color" content="#0b0c0d" />
+  <link rel="canonical" href="https://yoapro.site/" />
+  <meta property="og:title" content="YOA PRO · Galería de webs" />
+  <meta property="og:description" content="Diseño y desarrollo web para negocios de la Costa del Sol." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yoapro.site/" />
+  <meta property="og:site_name" content="YOA PRO" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:image" content="https://yoapro.site/assets/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://yoapro.site/assets/og.jpg" />
+  <link rel="icon" href="assets/favicon.svg?v=20261022" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20261022" />
+  <script>document.documentElement.classList.remove("no-js"); document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+  <!-- Cortina de entrada (se oculta sola a los 4,5 s aunque falle el JS) -->
+  <div class="splash" data-splash aria-hidden="true">
+    <div class="splash-inner">
+      <span class="brand-mark"></span>
+      <span class="splash-name">YOA PRO</span>
+      <span class="splash-line"><i></i></span>
+      <span class="splash-note">Abriendo la galería</span>
+    </div>
+  </div>
+
+  <!-- Escena 3D fija detrás del contenido -->
+  <canvas id="hall" class="scene" aria-hidden="true"></canvas>
+  <div class="scene-fallback" aria-hidden="true"></div>
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Navegación -->
+  <header class="nav" data-nav>
+    <a class="brand" href="#inicio" aria-label="YOA PRO, inicio">
+      <span class="brand-mark"></span>
+      <span class="brand-name">YOA PRO</span>
+      <span class="brand-sub">Estudio digital</span>
+    </a>
+    <nav class="nav-links" id="menu" aria-label="Principal">
+      <a href="#sala-1">Exposición</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#metodo">Método</a>
+      <a href="#planes">Planes</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn btn-primary btn-sm nav-cta" href="#contacto">Solicitar propuesta</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu"><span></span><span></span><span class="sr-only">Menú</span></button>
+  </header>
+
+  <!-- Indicador de posición en la galería -->
+  <aside class="hud" aria-hidden="true">
+    <div class="hud-row">
+      <span class="hud-label">Estás en</span>
+      <span class="hud-value" data-hud-room>Recepción</span>
+    </div>
+    <svg class="hud-map" viewBox="0 0 240 56" data-hud-map></svg>
+  </aside>
+  <div class="progress" aria-hidden="true"><span data-progress></span></div>
+
+  <div class="tour-pill" data-tour-pill hidden>
+    <span class="tour-dot"></span>
+    <span data-tour-label>Visita guiada</span>
+    <button type="button" data-tour-stop>Detener</button>
+  </div>
+
+  <main>
+
+    <!-- ===================== RECEPCIÓN ===================== -->
+    <section class="hero" id="inicio" data-cam="hero">
+      <div class="wrap hero-inner">
+        <p class="kicker reveal">YOA PRO · Galería de proyectos</p>
+        <h1 class="hero-title reveal">Webs que <span class="rotator" data-rotate><span class="is-on">trabajan</span><span>venden</span><span>dan citas</span><span>convencen</span></span><br />por tu negocio.</h1>
+        <p class="hero-lead reveal">Diseño, publicación y mantenimiento para negocios de la Costa del Sol. Pasa y recorre la galería.</p>
+        <div class="hero-cta reveal">
+          <button class="btn btn-primary" type="button" data-tour>Iniciar visita guiada</button>
+          <a class="btn btn-ghost" href="#contacto">Solicitar propuesta</a>
+        </div>
+      </div>
+      <div class="wrap hero-foot">
+        <span>07 piezas · 03 salas</span>
+        <span class="scroll-hint"><i></i>Desplázate para entrar</span>
+        <span>Benalmádena · Málaga</span>
+      </div>
+    </section>
+
+    <!-- ===================== EL ESTUDIO ===================== -->
+    <section class="intro" id="estudio" data-cam="intro">
+      <div class="wrap intro-grid">
+        <div class="panel intro-text reveal">
+          <p class="kicker">01 — El estudio</p>
+          <h2 data-words>Diseño claro. Webs rápidas. <span class="hl">Trato directo.</span></h2>
+          <p>Estudio independiente en Benalmádena. Te enseñamos tu web antes de que pagues nada.</p>
+        </div>
+        <ul class="facts">
+          <li class="reveal"><span class="fact-k">Propuesta previa</span><span class="fact-v">Ves tu web antes de decidir</span></li>
+          <li class="reveal"><span class="fact-k">Desde <span data-count="200">200</span> €</span><span class="fact-v">Pago único, IVA aparte</span></li>
+          <li class="reveal"><span class="fact-k">Todo en uno</span><span class="fact-v">Diseño, hosting y mantenimiento</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== SALA 01 ===================== -->
+    <section class="room" id="sala-1" data-cam="room-1">
+      <div class="wrap">
+        <div class="room-inner reveal">
+          <p class="room-num">Sala 01 · 2 piezas</p>
+          <h2 class="room-title" data-words>Estética y arte</h2>
+          <p class="room-desc">Imagen cuidada y el contacto siempre a mano.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="exhibit" id="pieza-sculptology" data-cam="ex-sculptology" data-side="L">
+      <div class="wrap">
+        <article class="ex-card reveal">
+          <p class="ex-top"><span class="ex-num">01<small>/07</small></span><span class="ex-status is-project">Proyecto</span></p>
+          <h3 class="ex-title" data-words>Sculptology</h3>
+          <p class="ex-sub">Estética corporal · Málaga</p>
+          <figure class="ex-figure"><img src="assets/img/sculptology.webp" alt="Web de Sculptology" loading="lazy" onerror="this.parentNode.classList.add('is-missing')" /></figure>
+          <p class="ex-desc">De un Wix hecho de imágenes a una web que se lee.</p>
+          <ul class="ex-keys"><li>Rediseño completo</li><li>Tratamientos ordenados</li><li>Contacto a un toque</li></ul>
+          <div class="ex-actions">
+            <a class="link-arrow" href="" target="_blank" rel="noopener" data-live hidden>Ver la web</a>
+            <a class="btn btn-ghost btn-sm" href="#pieza-diana-noris" data-next>Siguiente</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="exhibit" id="pieza-diana-noris" data-cam="ex-diana-noris" data-side="R">
+      <div class="wrap">
+        <article class="ex-card reveal">
+          <p class="ex-top"><span class="ex-num">02<small>/07</small></span><span class="ex-status is-project">Proyecto</span></p>
+          <h3 class="ex-title" data-words>Diana Noris</h3>
+          <p class="ex-sub">Cine y artes visuales · Málaga</p>
+          <figure class="ex-figure"><img src="assets/img/diana-noris.webp" alt="Web de Diana Noris" loading="lazy" onerror="this.parentNode.classList.add('is-missing')" /></figure>
+          <p class="ex-desc">Portfolio de una actriz, filmmaker y artista entre dos idiomas.</p>
+          <ul class="ex-keys"><li>Español e inglés</li><li>Reel y filmografía</li><li>Arte y prensa</li></ul>
+          <div class="ex-actions">
+            <a class="link-arrow" href="" target="_blank" rel="noopener" data-live hidden>Ver la web</a>
+            <a class="btn btn-ghost btn-sm" href="#sala-2" data-next>Siguiente sala</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== SALA 02 ===================== -->
+    <section class="room" id="sala-2" data-cam="room-2">
+      <div class="wrap">
+        <div class="room-inner reveal">
+          <p class="room-num">Sala 02 · 3 piezas</p>
+          <h2 class="room-title" data-words>Construcción y reformas</h2>
+          <p class="room-desc">Obras a la vista y presupuesto sin rodeos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="exhibit" id="pieza-andujar" data-cam="ex-andujar" data-side="L">
+      <div class="wrap">
+        <article class="ex-card reveal">
+          <p class="ex-top"><span class="ex-num">03<small>/07</small></span><span class="ex-status">Propuesta</span></p>
+          <h3 class="ex-title" data-words>Obras y Reformas Andújar</h3>
+          <p class="ex-sub">Reformas · Benalmádena</p>
+          <figure class="ex-figure"><img src="assets/img/andujar.webp" alt="Web de Obras y Reformas Andújar" loading="lazy" onerror="this.parentNode.classList.add('is-missing')" /></figure>
+          <p class="ex-desc">Rediseño para pedir presupuesto en menos clics.</p>
+          <ul class="ex-keys"><li>Servicios a la vista</li><li>Obras terminadas</li><li>Presupuesto directo</li></ul>
+          <div class="ex-actions">
+            <a class="link-arrow" href="" target="_blank" rel="noopener" data-live hidden>Ver la web</a>
+            <a class="btn btn-ghost btn-sm" href="#pieza-vip-team" data-next>Siguiente</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="exhibit" id="pieza-vip-team" data-cam="ex-vip-team" data-side="R">
+      <div class="wrap">
+        <article class="ex-card reveal">
+          <p class="ex-top"><span class="ex-num">04<small>/07</small></span><span class="ex-status">Propuesta</span></p>
+          <h3 class="ex-title" data-words>Vip Team Home &amp; Design</h3>
+          <p class="ex-sub">Reformas e interiorismo · Benalmádena</p>
+          <figure class="ex-figure"><img src="assets/img/vip-team.webp" alt="Web de Vip Team Home &amp; Design" loading="lazy" onerror="this.parentNode.classList.add('is-missing')" /></figure>
+          <p class="ex-desc">Precio cerrado y proyecto 3D, explicados en una página.</p>
+          <ul class="ex-keys"><li>Calculadora de presupuesto</li><li>Mueble 3D a medida</li><li>Antes y después</li></ul>
+          <div class="ex-actions">
+            <a class="link-arrow" href="" target="_blank" rel="noopener" data-live hidden>Ver la web</a>
+            <a class="btn btn-ghost btn-sm" href="#pieza-kerkhu" data-next>Siguiente</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="exhibit" id="pieza-kerkhu" data-cam="ex-kerkhu" data-side="L">
+      <div class="wrap">
+        <article class="ex-card reveal">
+          <p class="ex-top"><span class="ex-num">05<small>/07</small></span><span class="ex-status">Propuesta</span></p>
+          <h3 class="ex-title" data-words>KERKHU Obras y Reformas</h3>
+          <p class="ex-sub">Obras y reformas · Benalmádena</p>
+          <figure class="ex-figure"><img src="assets/img/kerkhu.webp" alt="Web de KERKHU Obras y Reformas" loading="lazy" onerror="this.parentNode.classList.add('is-missing')" /></figure>
+          <p class="ex-desc">Más de 30 años de oficio, contados con la misma seriedad.</p>
+          <ul class="ex-keys"><li>Presupuesto detallado</li><li>Planificación</li><li>Planos técnicos</li></ul>
+          <div class="ex-actions">
+            <a class="link-arrow" href="" target="_blank" rel="noopener" data-live hidden>Ver la web</a>
+            <a class="btn btn-ghost btn-sm" href="#sala-3" data-next>Siguiente sala</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== SALA 03 ===================== -->
+    <section class="room" id="sala-3" data-cam="room-3">
+      <div class="wrap">
+        <div class="room-inner reveal">
+          <p class="room-num">Sala 03 · 2 piezas</p>
+          <h2 class="room-title" data-words>Tatuaje y piercing</h2>
+          <p class="room-desc">De Instagram a la cita, sin intermediarios.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="exhibit" id="pieza-walk-ink" data-cam="ex-walk-ink" data-side="R">
+      <div class="wrap">
+        <article class="ex-card reveal">
+          <p class="ex-top"><span class="ex-num">06<small>/07</small></span><span class="ex-status">Propuesta</span></p>
+          <h3 class="ex-title" data-words>Walk Ink Tattoostudio</h3>
+          <p class="ex-sub">Estudio de tatuaje · Benalmádena</p>
+          <figure class="ex-figure"><img src="assets/img/walk-ink.webp" alt="Web de Walk Ink Tattoostudio" loading="lazy" onerror="this.parentNode.classList.add('is-missing')" /></figure>
+          <p class="ex-desc">Su primera web, hecha para llenar la agenda.</p>
+          <ul class="ex-keys"><li>Portfolio de tatuajes</li><li>Estilos</li><li>Pedir cita</li></ul>
+          <div class="ex-actions">
+            <a class="link-arrow" href="" target="_blank" rel="noopener" data-live hidden>Ver la web</a>
+            <a class="btn btn-ghost btn-sm" href="#pieza-inkspiration" data-next>Siguiente</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="exhibit" id="pieza-inkspiration" data-cam="ex-inkspiration" data-side="L">
+      <div class="wrap">
+        <article class="ex-card reveal">
+          <p class="ex-top"><span class="ex-num">07<small>/07</small></span><span class="ex-status">Propuesta</span></p>
+          <h3 class="ex-title" data-words>INKspiration Tattoo &amp; Piercing</h3>
+          <p class="ex-sub">Tatuaje y piercing · Torremolinos</p>
+          <figure class="ex-figure"><img src="assets/img/inkspiration.webp" alt="Web de INKspiration Tattoo &amp; Piercing" loading="lazy" onerror="this.parentNode.classList.add('is-missing')" /></figure>
+          <p class="ex-desc">Dos servicios en una web, sin perderse entre menús.</p>
+          <ul class="ex-keys"><li>Artistas</li><li>Trabajos</li><li>Reserva online</li></ul>
+          <div class="ex-actions">
+            <a class="link-arrow" href="" target="_blank" rel="noopener" data-live hidden>Ver la web</a>
+            <a class="btn btn-ghost btn-sm" href="#servicios" data-next>Salir al atrio</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== ATRIO: SERVICIOS ===================== -->
+    <section class="services" id="servicios" data-cam="services">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="kicker">02 — Servicios</p>
+          <h2 data-words>Lo que hacemos.</h2>
+        </header>
+        <div class="svc-grid">
+          <article class="panel svc reveal"><span class="svc-n">A</span><h3>Diseño web</h3><p>A medida y pensado primero para el móvil.</p></article>
+          <article class="panel svc reveal"><span class="svc-n">B</span><h3>Rediseño</h3><p>Tu web antigua, convertida en una que funciona.</p></article>
+          <article class="panel svc reveal"><span class="svc-n">C</span><h3>Hosting y mantenimiento</h3><p>Servidor, seguridad y cambios: de eso nos ocupamos.</p></article>
+          <article class="panel svc reveal"><span class="svc-n">D</span><h3>Asistente con IA</h3><p>Agenda tus citas y revisa tu correo.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MÉTODO ===================== -->
+    <section class="process" id="metodo" data-cam="process">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="kicker">03 — Método</p>
+          <h2 data-words>Cuatro pasos. <span class="hl">Ninguno a ciegas.</span></h2>
+        </header>
+        <ol class="steps">
+          <li class="panel step reveal"><span class="step-n">01</span><h3>Hablamos</h3><p>Cómo trabajas y qué necesitas.</p></li>
+          <li class="panel step reveal"><span class="step-n">02</span><h3>Te la enseñamos</h3><p>Ves tu web antes de pagar.</p></li>
+          <li class="panel step reveal"><span class="step-n">03</span><h3>La publicamos</h3><p>Dominio, textos y fotos, listos.</p></li>
+          <li class="panel step reveal"><span class="step-n">04</span><h3>La cuidamos</h3><p>Cambios y soporte cuando los pidas.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== PLANES ===================== -->
+    <section class="plans" id="planes" data-cam="plans">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="kicker">04 — Planes</p>
+          <h2 data-words>Dos formas de empezar.</h2>
+        </header>
+        <div class="plan-grid">
+          <article class="panel plan reveal">
+            <p class="plan-name">Pago único</p>
+            <p class="plan-price"><span class="amount"><span data-count="200">200</span> €</span><span class="per">+ IVA</span></p>
+            <p class="plan-desc">Tu web lista y publicada. Pagas una vez.</p>
+            <ul class="plan-list"><li>Diseño a medida</li><li>Versión móvil</li><li>Puesta en marcha</li></ul>
+            <a class="btn btn-ghost" href="#contacto" data-plan="Pago único">Elegir pago único</a>
+          </article>
+          <article class="panel plan plan-featured reveal">
+            <p class="plan-badge">Todo incluido</p>
+            <p class="plan-name">Plan anual</p>
+            <p class="plan-price"><span class="amount"><span data-count="25">25</span> €</span><span class="per">/ mes · facturado anualmente</span></p>
+            <p class="plan-desc">Web, hosting y mantenimiento en una sola cuota.</p>
+            <ul class="plan-list"><li>Diseño y desarrollo</li><li>Hosting y certificado SSL</li><li>Mantenimiento y cambios</li></ul>
+            <a class="btn btn-primary" href="#contacto" data-plan="Plan anual">Elegir plan anual</a>
+          </article>
+        </div>
+        <p class="plans-note reveal">¿Reservas, tienda o asistente con IA? Te damos precio cerrado.</p>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACTO ===================== -->
+    <section class="contact" id="contacto" data-cam="contact">
+      <div class="wrap contact-grid">
+        <div class="contact-text reveal">
+          <p class="kicker">05 — Contacto</p>
+          <h2 data-words>Fin del recorrido. <span class="hl">Empieza el tuyo.</span></h2>
+          <p>Cuéntanos qué haces y te preparamos tu propuesta.</p>
+          <ul class="contact-list">
+            <li><span>WhatsApp y teléfono</span><a href="https://wa.me/34603379870" target="_blank" rel="noopener">603 379 870</a></li>
+            <li><span>Correo</span><a href="mailto:yoainstalaciones@hotmail.com">yoainstalaciones@hotmail.com</a></li>
+            <li><span>Zona</span><span>Benalmádena · Málaga · Costa del Sol</span></li>
+          </ul>
+        </div>
+        <form class="panel contact-form reveal" novalidate data-wa-form>
+          <label class="field"><span>Nombre</span><input id="f-nombre" name="nombre" type="text" required autocomplete="name" /></label>
+          <label class="field"><span>Negocio</span><input id="f-negocio" name="negocio" type="text" required autocomplete="organization" placeholder="Nombre y sector" /></label>
+          <fieldset class="seg">
+            <legend>¿Tienes web ahora?</legend>
+            <label><input id="f-web-si" type="radio" name="web" value="Sí" /><span>Sí</span></label>
+            <label><input id="f-web-no" type="radio" name="web" value="No" checked /><span>No</span></label>
+          </fieldset>
+          <label class="field"><span>Mensaje <em>(opcional)</em></span><textarea id="f-mensaje" name="mensaje" rows="3"></textarea></label>
+          <button class="btn btn-primary" type="submit">Enviar por WhatsApp</button>
+          <p class="form-note" data-form-note>Se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <span class="brand foot-brand"><span class="brand-mark"></span><span class="brand-name">YOA PRO</span></span>
+      <span>Diseño y desarrollo web · Benalmádena, Málaga</span>
+      <span>© <span data-year>2026</span> YOA PRO · Yoa Instalaciones</span>
+    </div>
+  </footer>
+
+  <script defer src="lib/three.min.js"></script>
+  <script defer src="lib/manifest.js?v=20261022"></script>
+  <script defer src="hall.js?v=20261022"></script>
+  <script defer src="main.js?v=20261022"></script>
+</body>
+</html>
