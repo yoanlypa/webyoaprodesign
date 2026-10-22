@@ -818,7 +818,11 @@
 
     renderer.render(scene, camera);
 
-    if (firstFrame) { firstFrame = false; document.documentElement.classList.add("scene-ready"); }
+    if (firstFrame) {
+      firstFrame = false;
+      document.documentElement.classList.add("scene-ready");
+      document.documentElement.classList.remove("no-webgl"); // por si el aviso de respaldo saltó antes del primer fotograma
+    }
     if (d.idx !== lastStop) {
       lastStop = d.idx;
       if (typeof Hall.onStop === "function") Hall.onStop(d.idx, stops[d.idx] ? stops[d.idx].key : "");

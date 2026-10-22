@@ -196,7 +196,8 @@
 
     // Si en 4,5 s no hay ni un fotograma, se queda la versión sin 3D
     setTimeout(function () {
-      if (!root.classList.contains("scene-ready")) { root.classList.add("no-webgl"); root.classList.remove("webgl-on"); }
+      // En una pestaña en segundo plano el navegador no pinta: no es un fallo de WebGL
+      if (!root.classList.contains("scene-ready") && !document.hidden) { root.classList.add("no-webgl"); root.classList.remove("webgl-on"); }
     }, 4500);
   }
 
