@@ -18,7 +18,7 @@
 
   // ---- Planta del pasillo (el visitante avanza hacia -z) ----
   var HALL_W = 14, HALL_H = 7, Z_START = 14, Z_END = -94;
-  var EX_Z = [-10, -18.5, -33, -41.5, -50, -65, -73.5];
+  var EX_Z = [-10, -18.5, -33, -41.5, -65, -73.5];
   var ROOM_Z = { 1: -3.5, 2: -26, 3: -57.5 };
   var PORTALS_Z = [6, -14.25, -37.25, -45.75, -69.25, -80];
   var ATRIUM = { x: 0, y: 3.4, z: -86 };
