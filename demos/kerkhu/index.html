@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KERKHU · Obras y Reformas en Benalmádena y Costa del Sol</title>
+<meta name="description" content="Obras y reformas de tamaño medio en Benalmádena y la Costa del Sol. Presupuestos desglosados por capítulos y partidas, medición real y planificación por fases. Más de 30 años de experiencia.">
+<meta property="og:title" content="KERKHU · Obras y Reformas · Costa del Sol">
+<meta property="og:description" content="Obras bien medidas. Presupuestos sin sorpresas. Más de 30 años de experiencia en construcción.">
+<meta property="og:image" content="https://kerkhu.com/wp-content/uploads/2024/02/09-plana-1920x1024.jpg">
+<meta name="theme-color" content="#14111f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"GeneralContractor",
+  "name":"KERKHU Obras y Reformas",
+  "url":"https://kerkhu.com/",
+  "telephone":"+34653646615",
+  "email":"info@kerkhu.com",
+  "image":"https://kerkhu.com/wp-content/uploads/2024/01/Logo-KERKHU.png",
+  "address":{"@type":"PostalAddress","addressLocality":"Benalmádena","addressRegion":"Málaga","addressCountry":"ES"},
+  "areaServed":"Costa del Sol",
+  "founder":{"@type":"Person","name":"Miguel A. Robles"},
+  "sameAs":["https://www.youtube.com/@KERKHUObrasyReformas"]
+}
+</script>
+
+<style>
+:root{
+  --ink:#14111f; --ink-2:#1d1930; --ink-3:#2a2445;
+  --violet:#3d24c9; --violet-2:#5b45ea;
+  --amber:#ffc21a; --amber-2:#ffd75e;
+  --paper:#f3efe6; --paper-2:#e9e3d6;
+  --text:#ece9f5; --muted:#a9a3bf; --ink-text:#1b1828; --ink-muted:#5d5871;
+  --line:rgba(255,255,255,.12); --line-ink:rgba(20,17,31,.14);
+  --radius:18px;
+  --f-display:"Bricolage Grotesque",system-ui,sans-serif;
+  --f-body:"Instrument Sans",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--ink);color:var(--text);font-family:var(--f-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.wrap{width:min(1240px,100% - 40px);margin-inline:auto}
+.mono{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--amber)}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+h1,h2,h3{font-family:var(--f-display);font-weight:800;line-height:1.02;letter-spacing:-.025em}
+h2{font-size:clamp(36px,5.2vw,68px)}
+h3{font-size:24px;letter-spacing:-.01em}
+.lead{font-size:clamp(17px,1.5vw,20px);color:var(--muted);max-width:56ch}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 24px;border-radius:999px;font-weight:600;font-size:16px;transition:transform .25s,background .25s,box-shadow .25s;white-space:nowrap}
+.btn svg{width:18px;height:18px}
+.btn-amber{background:var(--amber);color:var(--ink)}
+.btn-amber:hover{transform:translateY(-2px);box-shadow:0 12px 30px -10px rgba(255,194,26,.6)}
+.btn-ghost{border:1px solid var(--line);color:var(--text)}
+.btn-ghost:hover{background:rgba(255,255,255,.06)}
+.btn-ink{background:var(--ink);color:var(--paper)}
+.btn-ink:hover{transform:translateY(-2px)}
+
+/* ---------- header ---------- */
+.hdr{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent}
+.hdr.scrolled{background:rgba(20,17,31,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:800;font-size:22px;letter-spacing:.02em}
+.logo b{background:var(--violet);color:var(--amber);padding:6px 10px;border-radius:8px;line-height:1}
+.logo small{font-family:var(--f-mono);font-weight:400;font-size:10px;letter-spacing:.14em;color:var(--muted);line-height:1.3}
+.nav{display:flex;gap:30px;font-size:15px;color:var(--muted)}
+.nav a:hover{color:var(--text)}
+.hdr-cta{display:flex;gap:10px;align-items:center}
+.hdr-cta .tel{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+.hdr-cta .tel:hover{color:var(--amber)}
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);align-items:center;justify-content:center}
+.burger span{width:18px;height:2px;background:var(--text);position:relative;display:block}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--text)}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.mnav{position:fixed;inset:76px 0 0 0;background:var(--ink);z-index:49;padding:30px 20px;display:none;flex-direction:column;gap:6px}
+.mnav.open{display:flex}
+.mnav a{font-family:var(--f-display);font-size:34px;font-weight:700;padding:10px 0;border-bottom:1px solid var(--line)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;padding:130px 0 60px;display:flex;align-items:center;overflow:hidden;
+  background:
+   radial-gradient(900px 600px at 85% 20%,rgba(61,36,201,.45),transparent 60%),
+   radial-gradient(600px 500px at 10% 90%,rgba(255,194,26,.10),transparent 60%),
+   var(--ink)}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;opacity:.35;mask-image:radial-gradient(ellipse at 60% 40%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 60% 40%,#000 20%,transparent 75%)}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.hero h1{font-size:clamp(46px,7.2vw,104px);margin:22px 0 26px}
+.hero h1 .u{position:relative;display:inline-block;color:var(--amber)}
+.hero h1 .u svg{position:absolute;left:0;right:0;bottom:-14px;width:100%;height:22px;overflow:visible}
+.hero h1 .u path{stroke:var(--amber);stroke-width:2;fill:none;stroke-dasharray:600;stroke-dashoffset:600;animation:draw 1.6s .6s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero-photo{position:relative;aspect-ratio:4/5;border-radius:26px;overflow:visible}
+.hero-photo .frame{position:absolute;inset:0;border-radius:26px;overflow:hidden;background:linear-gradient(135deg,#2a2445,#3d24c9)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:68% 50%;transform:scale(1.08);animation:zoomout 2.4s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes zoomout{to{transform:scale(1)}}
+.hero-photo .frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(20,17,31,.7))}
+.cota{position:absolute;color:var(--amber);font-family:var(--f-mono);font-size:11px;letter-spacing:.08em}
+.cota-v{left:-34px;top:0;bottom:0;width:20px}
+.cota-h{top:-34px;left:0;right:0;height:20px}
+.cota svg{width:100%;height:100%;overflow:visible}
+.cota line{stroke:var(--amber);stroke-width:1.2;stroke-dasharray:900;stroke-dashoffset:900;animation:draw 1.4s 1s ease-out forwards}
+.cota span{position:absolute;background:var(--ink);padding:2px 6px}
+.cota-h span{left:50%;top:50%;transform:translate(-50%,-50%)}
+.cota-v span{top:50%;left:50%;transform:translate(-50%,-50%) rotate(-90deg);white-space:nowrap}
+.chip-card{position:absolute;left:-40px;bottom:36px;background:var(--paper);color:var(--ink-text);border-radius:16px;padding:16px 18px;width:250px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);animation:float 6s ease-in-out infinite}
+.chip-card .mono{color:var(--ink-muted);font-size:10px}
+.chip-card .row{display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px dashed var(--line-ink)}
+.chip-card .row:last-child{border:0}
+.chip-card .row b{font-family:var(--f-mono);font-size:12px;color:var(--violet)}
+.chip-card2{position:absolute;right:-22px;top:40px;background:var(--amber);color:var(--ink);border-radius:14px;padding:12px 16px;font-weight:600;font-size:14px;display:flex;align-items:center;gap:10px;animation:float 7s 1s ease-in-out infinite;box-shadow:0 20px 40px -15px rgba(255,194,26,.5)}
+.stars{letter-spacing:2px}
+@keyframes float{50%{transform:translateY(-10px)}}
+
+/* trust strip */
+.trust{position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--ink-2)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.trust div{padding:26px 20px;border-left:1px solid var(--line)}
+.trust div:first-child{border-left:0}
+.trust strong{display:block;font-family:var(--f-display);font-size:34px;font-weight:800;color:var(--text);line-height:1.1}
+.trust span{color:var(--muted);font-size:14px}
+
+/* marquee */
+.marquee{background:var(--amber);color:var(--ink);overflow:hidden;padding:18px 0;transform:rotate(-1.2deg) scaleX(1.03);margin:50px 0}
+.marquee-track{display:flex;gap:48px;width:max-content;animation:marq 38s linear infinite;font-family:var(--f-display);font-weight:800;font-size:28px;letter-spacing:-.01em}
+.marquee-track span{display:flex;align-items:center;gap:48px;white-space:nowrap}
+.marquee-track span::after{content:"✦";font-size:18px}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* sections */
+section{position:relative}
+.sec{padding:120px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:60px;flex-wrap:wrap}
+.sec-head h2{max-width:14ch}
+
+/* audiences */
+.aud{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.aud article{position:relative;border:1px solid var(--line);border-radius:var(--radius);padding:34px 28px 30px;background:linear-gradient(180deg,rgba(255,255,255,.03),transparent);overflow:hidden;transition:border-color .3s,transform .3s}
+.aud article:hover{border-color:rgba(255,194,26,.5);transform:translateY(-4px)}
+.aud .num{font-family:var(--f-mono);color:var(--amber);font-size:12px}
+.aud h3{margin:60px 0 12px;font-size:28px}
+.aud p{color:var(--muted);font-size:15.5px}
+.aud ul{list-style:none;margin-top:20px;display:flex;flex-wrap:wrap;gap:8px}
+.aud li{font-size:12.5px;border:1px solid var(--line);padding:5px 10px;border-radius:999px;color:var(--text)}
+.aud .ico{position:absolute;right:24px;top:24px;width:46px;height:46px;border-radius:12px;background:var(--ink-3);display:grid;place-items:center;color:var(--amber)}
+.aud .ico svg{width:24px;height:24px}
+
+/* ---------- budget (paper) ---------- */
+.paper{background:var(--paper);color:var(--ink-text)}
+.paper .lead{color:var(--ink-muted)}
+.paper .eyebrow{color:var(--violet)}
+.paper::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line-ink) 1px,transparent 1px),linear-gradient(90deg,var(--line-ink) 1px,transparent 1px);background-size:32px 32px;opacity:.35;pointer-events:none}
+.budget-grid{position:relative;display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}
+.budget-points{margin-top:36px;display:grid;gap:18px}
+.budget-points div{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+.budget-points i{font-style:normal;width:44px;height:44px;border-radius:12px;background:var(--ink);color:var(--amber);display:grid;place-items:center;font-family:var(--f-mono);font-size:13px}
+.budget-points b{display:block;font-size:17px}
+.budget-points span{color:var(--ink-muted);font-size:15px}
+.doc{background:#fffdf8;border:1px solid var(--line-ink);border-radius:20px;box-shadow:0 40px 80px -40px rgba(20,17,31,.35);overflow:hidden;position:sticky;top:100px}
+.doc-top{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;border-bottom:1px solid var(--line-ink);background:var(--ink);color:var(--paper)}
+.doc-top .logo{font-size:16px}
+.doc-top .logo b{padding:4px 8px}
+.doc-top .mono{color:var(--muted);font-size:10.5px;text-align:right}
+.doc-tabs{display:flex;gap:6px;padding:14px 22px;border-bottom:1px solid var(--line-ink)}
+.doc-tabs button{padding:8px 14px;border-radius:999px;font-size:14px;font-weight:600;color:var(--ink-muted)}
+.doc-tabs button.on{background:var(--ink);color:var(--paper)}
+.doc-pane{display:none}.doc-pane.on{display:block}
+.cap{border-bottom:1px solid var(--line-ink)}
+.cap-h{width:100%;display:grid;grid-template-columns:70px 1fr auto 24px;align-items:center;gap:12px;padding:16px 22px;text-align:left;transition:background .2s}
+.cap-h:hover{background:var(--paper)}
+.cap-h .mono{color:var(--violet);font-weight:600}
+.cap-h b{font-size:16px}
+.cap-h em{font-style:normal;font-family:var(--f-mono);font-size:11px;color:var(--ink-muted)}
+.cap-h .pl{width:24px;height:24px;border-radius:50%;border:1px solid var(--line-ink);display:grid;place-items:center;transition:transform .3s,background .3s}
+.cap.open .pl{transform:rotate(45deg);background:var(--amber);border-color:var(--amber)}
+.cap-b{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s ease}
+.cap.open .cap-b{grid-template-rows:1fr}
+.cap-b>div{overflow:hidden}
+.part{display:grid;grid-template-columns:70px 1fr 54px 70px;gap:12px;padding:10px 22px;font-size:14px;border-top:1px dashed var(--line-ink);align-items:start}
+.part:first-child{border-top:0}
+.part .c{font-family:var(--f-mono);font-size:11.5px;color:var(--ink-muted);padding-top:2px}
+.part .q{font-size:12px;color:var(--ink-muted);margin-top:3px}
+.part .q mark{background:rgba(255,194,26,.35);padding:0 5px;border-radius:4px;color:var(--ink-text)}
+.part .u,.part .m{font-family:var(--f-mono);font-size:12px;text-align:right;padding-top:2px}
+.part.head{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-muted);background:var(--paper)}
+.doc-foot{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;font-size:13px;color:var(--ink-muted);gap:10px;flex-wrap:wrap}
+.doc-foot .tag{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.06em;background:var(--paper-2);padding:5px 10px;border-radius:999px}
+/* gantt */
+.gantt{padding:22px}
+.g-row{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:center;margin-bottom:12px;font-size:14px}
+.g-track{position:relative;height:30px;background:repeating-linear-gradient(90deg,var(--paper) 0 calc(12.5% - 1px),var(--line-ink) calc(12.5% - 1px) 12.5%);border-radius:8px}
+.g-bar{position:absolute;top:4px;bottom:4px;border-radius:6px;background:var(--violet);transform-origin:left;transform:scaleX(0);transition:transform .9s cubic-bezier(.6,0,.2,1)}
+.g-bar.a{background:var(--amber)}
+.g-bar.k{background:var(--ink)}
+.doc-pane.on .g-bar{transform:scaleX(1)}
+.g-weeks{display:grid;grid-template-columns:150px repeat(8,1fr);gap:0 0;font-family:var(--f-mono);font-size:10px;color:var(--ink-muted);margin-bottom:10px}
+.g-weeks span:first-child{grid-column:1}
+.plan-svg{padding:22px}
+.plan-svg svg{width:100%;height:auto}
+
+/* method */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);position:relative}
+.steps .bar{position:absolute;top:-1px;left:0;height:2px;background:var(--amber);width:0;transition:width 1.6s cubic-bezier(.6,0,.2,1)}
+.steps.in .bar{width:100%}
+.step{padding:34px 26px 10px 0}
+.step .mono{color:var(--amber)}
+.step h3{margin:18px 0 10px}
+.step p{color:var(--muted);font-size:15.5px}
+
+/* projects */
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filters button{padding:10px 16px;border-radius:999px;border:1px solid var(--line);font-size:14px;color:var(--muted);transition:all .2s}
+.filters button.on,.filters button:hover{background:var(--text);color:var(--ink);border-color:var(--text)}
+.pgrid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:270px;gap:16px}
+.proj{position:relative;border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,var(--ink-3),var(--violet));cursor:pointer;grid-column:span 4;transition:opacity .35s,transform .35s}
+.proj.big{grid-column:span 8}
+.proj.tall{grid-row:span 2}
+.proj img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.proj:hover img{transform:scale(1.06)}
+.proj::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,17,31,0) 40%,rgba(20,17,31,.92))}
+.proj .meta{position:absolute;left:20px;right:20px;bottom:18px;z-index:2}
+.proj .meta .mono{color:var(--amber);font-size:11px}
+.proj .meta h3{font-size:21px;margin-top:6px;line-height:1.15}
+.proj .open{position:absolute;right:16px;top:16px;z-index:2;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.14);backdrop-filter:blur(6px);display:grid;place-items:center;opacity:0;transform:scale(.8);transition:.3s}
+.proj:hover .open{opacity:1;transform:none}
+.proj.hide{display:none}
+.lb{position:fixed;inset:0;z-index:90;background:rgba(10,8,16,.92);display:none;align-items:center;justify-content:center;padding:30px}
+.lb.on{display:flex}
+.lb figure{max-width:1100px;width:100%}
+.lb img{width:100%;max-height:78vh;object-fit:contain;border-radius:14px;background:var(--ink-2)}
+.lb figcaption{display:flex;justify-content:space-between;gap:20px;margin-top:14px;flex-wrap:wrap}
+.lb figcaption h3{font-size:22px}
+.lb .x{position:absolute;top:20px;right:20px;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.1);font-size:24px}
+
+/* director */
+.director{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.dir-img{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,var(--ink-3),var(--violet))}
+.dir-img img{width:100%;height:100%;object-fit:cover}
+.dir-img .badge{position:absolute;left:18px;bottom:18px;background:var(--amber);color:var(--ink);padding:14px 18px;border-radius:14px}
+.dir-img .badge strong{font-family:var(--f-display);font-size:40px;line-height:1;display:block}
+.director blockquote{font-family:var(--f-display);font-size:clamp(26px,3vw,40px);font-weight:700;line-height:1.15;letter-spacing:-.02em;margin:22px 0 26px}
+.director blockquote em{font-style:normal;color:var(--amber)}
+.director p{color:var(--muted)}
+.sig{margin-top:26px;display:flex;align-items:center;gap:14px}
+.sig .av{width:52px;height:52px;border-radius:50%;background:var(--violet);display:grid;place-items:center;font-family:var(--f-display);font-weight:800;color:var(--amber)}
+.sig b{display:block}.sig span{color:var(--muted);font-size:14px}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rev{background:var(--ink-2);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:18px}
+.rev .stars{color:var(--amber);font-size:15px}
+.rev p{font-size:16.5px;line-height:1.55;flex:1}
+.rev footer{display:flex;align-items:center;gap:12px;font-size:14px}
+.rev .av{width:38px;height:38px;border-radius:50%;background:var(--ink-3);display:grid;place-items:center;font-weight:700;font-size:14px;color:var(--amber)}
+.rev footer span{color:var(--muted);font-size:12.5px;display:block}
+.rev.feat{grid-row:span 2;background:var(--violet);border-color:transparent}
+.rev.feat p{font-family:var(--f-display);font-size:28px;font-weight:700;line-height:1.2;letter-spacing:-.015em}
+.rev.feat .av{background:var(--amber);color:var(--ink)}
+.rev.feat footer span{color:#cfc8ff}
+.g-link{display:inline-flex;gap:10px;align-items:center;color:var(--muted);font-size:15px;border-bottom:1px solid var(--line);padding-bottom:4px}
+.g-link:hover{color:var(--amber)}
+
+/* zone */
+.zone{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.zone svg{width:100%;height:auto}
+.zone .town text{font-family:var(--f-mono);font-size:11px;fill:var(--muted);letter-spacing:.06em}
+.zone .town.home text{fill:var(--amber);font-weight:600;font-size:13px}
+.pulse{animation:pulse 2.4s ease-out infinite;transform-origin:center;transform-box:fill-box}
+@keyframes pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(4);opacity:0}}
+
+/* contact */
+.contact{background:var(--ink-2);border-top:1px solid var(--line)}
+.cform{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:start}
+.fbox{background:var(--ink);border:1px solid var(--line);border-radius:24px;padding:34px}
+.fstep{margin-bottom:26px}
+.fstep label,.fstep .lbl{display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.fstep>.lbl b{color:var(--amber);margin-right:8px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts button{padding:10px 16px;border-radius:12px;border:1px solid var(--line);font-size:14.5px;transition:all .2s}
+.opts button:hover{border-color:var(--muted)}
+.opts button.on{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+input,select,textarea{width:100%;background:var(--ink-2);border:1px solid var(--line);border-radius:12px;padding:14px 16px;color:var(--text);font:inherit;font-size:15px;outline:none;transition:border-color .2s}
+input:focus,select:focus,textarea:focus{border-color:var(--amber)}
+textarea{min-height:110px;resize:vertical}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 15px) 50%;background-size:5px 5px;background-repeat:no-repeat}
+.preview{position:sticky;top:100px}
+.bubble{background:#0b141a;border-radius:20px;padding:22px;border:1px solid var(--line)}
+.bubble .top{display:flex;align-items:center;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:16px}
+.bubble .top .av{width:40px;height:40px;border-radius:50%;background:var(--violet);color:var(--amber);display:grid;place-items:center;font-weight:800;font-family:var(--f-display);font-size:14px}
+.bubble .top span{color:var(--muted);font-size:12.5px;display:block}
+.msg{background:#005c4b;color:#e9edef;border-radius:12px 12px 2px 12px;padding:14px 16px;font-size:14.5px;white-space:pre-wrap;line-height:1.5;margin-left:30px;min-height:120px}
+.send{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.send .btn{flex:1;justify-content:center}
+.wa{background:#25d366;color:#08281a}
+.wa:hover{transform:translateY(-2px);box-shadow:0 12px 30px -10px rgba(37,211,102,.6)}
+.cinfo{margin-top:20px;display:grid;gap:10px}
+.cinfo a{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;border:1px solid var(--line);border-radius:14px;transition:border-color .2s}
+.cinfo a:hover{border-color:var(--amber)}
+.cinfo .mono{color:var(--muted);font-size:10.5px}
+
+/* footer */
+footer.ft{padding:70px 0 120px;border-top:1px solid var(--line)}
+.ft-big{font-family:var(--f-display);font-weight:800;font-size:clamp(70px,17vw,250px);line-height:.85;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.18);margin-bottom:40px;user-select:none}
+.ft-row{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+.ft-row a:hover{color:var(--amber)}
+.ft-row nav{display:flex;gap:22px;flex-wrap:wrap}
+
+/* floating */
+.fab{position:fixed;right:20px;bottom:20px;z-index:60;width:60px;height:60px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 14px 34px -10px rgba(37,211,102,.7);transition:transform .25s}
+.fab:hover{transform:scale(1.08)}
+.fab svg{width:30px;height:30px;fill:#fff}
+.mbar{display:none}
+.proposal{position:fixed;left:20px;bottom:20px;z-index:60;background:var(--paper);color:var(--ink);padding:10px 14px;border-radius:12px;font-size:12.5px;display:flex;gap:10px;align-items:center;box-shadow:0 10px 30px -10px rgba(0,0,0,.5)}
+.proposal b{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;background:var(--ink);color:var(--amber);padding:3px 7px;border-radius:6px}
+.proposal button{font-size:16px;opacity:.6}
+
+/* reveal (content stays visible without JS) */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv.d1{transition-delay:.08s}.js .rv.d2{transition-delay:.16s}.js .rv.d3{transition-delay:.24s}
+
+/* ---------- responsive ---------- */
+@media (max-width:1020px){
+  .nav,.hdr-cta .tel{display:none}
+  .burger{display:flex}
+  .hero-grid,.budget-grid,.director,.zone,.cform{grid-template-columns:1fr}
+  .hero-photo{max-width:520px;margin-left:40px}
+  .aud,.revs{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .doc,.preview{position:relative;top:0}
+  .proj,.proj.big{grid-column:span 6}
+  .proj.tall{grid-row:auto}
+  .pgrid{grid-auto-rows:240px}
+}
+@media (max-width:680px){
+  body{font-size:16px}
+  .wrap{width:calc(100% - 32px)}
+  .sec{padding:84px 0}
+  .hdr .wrap{height:66px}.mnav{inset:66px 0 0 0}
+  .hdr-cta .btn{display:none}
+  .hero{padding-top:100px}
+  .hero-photo{margin:30px 0 0 26px;aspect-ratio:1/1}
+  .cota-v{left:-26px}
+  .chip-card{left:-14px;bottom:-24px;width:220px}
+  .chip-card2{right:-6px;top:-18px}
+  .trust .wrap{grid-template-columns:1fr 1fr}
+  .trust div:nth-child(3){border-left:0}
+  .trust div{border-top:1px solid var(--line)}
+  .trust div:nth-child(-n+2){border-top:0}
+  .trust strong{font-size:26px}
+  .aud,.revs,.steps{grid-template-columns:1fr}
+  .rev.feat{grid-row:auto}
+  .proj,.proj.big{grid-column:span 12}
+  .part{grid-template-columns:52px 1fr 46px;padding:10px 16px}
+  .part .u{display:none}
+  .cap-h{grid-template-columns:62px 1fr 24px;padding:14px 16px}.cap-h .mono{white-space:nowrap;font-size:11px}
+  .cap-h em{display:none}
+  .g-row{grid-template-columns:100px 1fr;font-size:12.5px}
+  .g-weeks{grid-template-columns:100px repeat(8,1fr)}
+  .frow{grid-template-columns:1fr}
+  .fbox{padding:22px}
+  .marquee-track{font-size:22px}
+  .fab{display:none}
+  .proposal{bottom:84px;left:16px}
+  .mbar{display:grid;grid-template-columns:1fr 1.4fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(20,17,31,.92);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+  .mbar .btn{justify-content:center;padding:14px}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js');document.body.classList.add('js')</script>
+
+<!-- HEADER -->
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="KERKHU inicio"><b>KERKHU</b><small>OBRAS<br>Y REFORMAS</small></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#presupuesto">Presupuesto</a>
+      <a href="#metodo">Método</a>
+      <a href="#obras">Obras</a>
+      <a href="#opiniones">Opiniones</a>
+    </nav>
+    <div class="hdr-cta">
+      <a class="tel" href="tel:+34653646615">653 646 615</a>
+      <a class="btn btn-amber" href="#contacto">Pedir presupuesto</a>
+      <button class="burger" id="burger" aria-label="Abrir menú"><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mnav" id="mnav" aria-label="Móvil">
+  <a href="#servicios">Servicios</a><a href="#presupuesto">Presupuesto</a><a href="#metodo">Método</a><a href="#obras">Obras</a><a href="#opiniones">Opiniones</a><a href="#contacto">Contacto</a>
+</nav>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="mono eyebrow rv">Benalmádena · Costa del Sol · +30 años de oficio</span>
+      <h1 class="rv d1">Obras bien medidas.<br>Presupuestos <span class="u">sin sorpresas.<svg viewBox="0 0 400 22" preserveAspectRatio="none"><path d="M2 12 L398 12 M2 2 L2 22 M398 2 L398 22"/></svg></span></h1>
+      <p class="lead rv d2">Reformas y obras de tamaño medio para comunidades, viviendas y empresas. Te entregamos un presupuesto desglosado por capítulos y partidas, con medición real, calidades por escrito y un plan de obra por fases.</p>
+      <div class="hero-actions rv d3">
+        <a class="btn btn-amber" href="#contacto">Pedir presupuesto desglosado
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#presupuesto">Ver cómo es un presupuesto</a>
+      </div>
+    </div>
+    <div class="hero-photo rv d2">
+      <div class="cota cota-h" aria-hidden="true"><svg><line x1="0" y1="10" x2="100%" y2="10"/><line x1="0" y1="2" x2="0" y2="18"/><line x1="100%" y1="2" x2="100%" y2="18"/></svg><span>MEDICIÓN REAL</span></div>
+      <div class="cota cota-v" aria-hidden="true"><svg><line x1="10" y1="0" x2="10" y2="100%"/><line x1="2" y1="0" x2="18" y2="0"/><line x1="2" y1="100%" x2="18" y2="100%"/></svg><span>PLAZO REALISTA</span></div>
+      <div class="frame"><img src="img/hero.webp" alt="Operario nivelando hormigón con una plana en una obra de KERKHU" onerror="this.remove()"></div>
+      <div class="chip-card2"><span class="stars">★★★★★</span> Reseñas en Google</div>
+      <div class="chip-card">
+        <div class="mono">Presupuesto KERKHU</div>
+        <div class="row"><span>Capítulos de obra</span><b>✓</b></div>
+        <div class="row"><span>Partidas medidas</span><b>✓</b></div>
+        <div class="row"><span>Calidades por escrito</span><b>✓</b></div>
+        <div class="row"><span>Plan por fases</span><b>✓</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust">
+  <div class="wrap">
+    <div><strong><span data-count="30">30</span>+</strong><span>años de experiencia del gerente</span></div>
+    <div><strong>Por partidas</strong><span>presupuesto desglosado y medido en obra</span></div>
+    <div><strong>Costa del Sol</strong><span>con base en Benalmádena</span></div>
+    <div><strong>5★</strong><span>valoraciones de clientes en Google</span></div>
+  </div>
+</div>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Reformas de vivienda</span><span>Comunidades de propietarios</span><span>Accesibilidad y rampas</span><span>Losas y cimentación</span><span>Demoliciones</span><span>Acometidas</span><span>Patios y fachadas</span><span>Peldaños y revestimientos</span>
+    <span>Reformas de vivienda</span><span>Comunidades de propietarios</span><span>Accesibilidad y rampas</span><span>Losas y cimentación</span><span>Demoliciones</span><span>Acometidas</span><span>Patios y fachadas</span><span>Peldaños y revestimientos</span>
+  </div>
+</div>
+
+<!-- AUDIENCES -->
+<section class="sec" id="servicios">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="rv">Una obra distinta para cada cliente.</h2>
+      <p class="lead rv d1">Adaptamos la solución al tipo de edificio, al presupuesto disponible y al nivel de acabado que esperas. No vendemos “la reforma estándar”.</p>
+    </div>
+    <div class="aud">
+      <article class="rv">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V5l8-3 8 3v16M9 21v-5h6v5M8 8h2M14 8h2M8 12h2M14 12h2"/></svg></div>
+        <span class="num">01 / COMUNIDADES</span>
+        <h3>Comunidades y administradores de fincas</h3>
+        <p>Portales, escaleras, patios, accesos y zonas comunes. Presupuestos claros para presentar en junta y obras que molestan lo mínimo a los vecinos.</p>
+        <ul><li>Rampas de acceso</li><li>Huecos de ascensor</li><li>Peldaños</li><li>Mallas antipájaros</li></ul>
+      </article>
+      <article class="rv d1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-6h4v6"/></svg></div>
+        <span class="num">02 / VIVIENDAS</span>
+        <h3>Reformas de vivienda</h3>
+        <p>Cocinas, baños, distribución o reforma integral. Sabes qué se hace, con qué materiales y en qué orden, antes de empezar.</p>
+        <ul><li>Reforma integral</li><li>Cocinas y baños</li><li>Revestimientos</li><li>Instalaciones</li></ul>
+      </article>
+      <article class="rv d2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V9h14v12M9 9V5h6v4M9 13h6M9 17h6"/></svg></div>
+        <span class="num">03 / EMPRESAS Y URBANIZACIONES</span>
+        <h3>Obra para urbanizaciones, locales y empresas</h3>
+        <p>Losas de hormigón, cerramientos, demoliciones y acometidas, con planificación por fases y planos de detalle cuando la obra lo requiere.</p>
+        <ul><li>Losas y soleras</li><li>Cerramientos</li><li>Demoliciones</li><li>Acometidas</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BUDGET INTERACTIVE -->
+<section class="sec paper" id="presupuesto">
+  <div class="wrap budget-grid">
+    <div>
+      <span class="mono eyebrow rv">Nuestro sello</span>
+      <h2 class="rv d1" style="margin-top:18px">El presupuesto que se entiende.</h2>
+      <p class="lead rv d2" style="margin-top:22px">Un presupuesto de obra con una sola cifra al final no protege a nadie. El nuestro detalla cada capítulo y cada partida para que compares, decidas y sepas qué estás pagando.</p>
+      <div class="budget-points">
+        <div class="rv"><i>01</i><p><b>Medición real de los trabajos</b><span>Medimos en obra. Nada de “a ojo” ni partidas alzadas sin explicar.</span></p></div>
+        <div class="rv d1"><i>02</i><p><b>Calidades y procedimiento por partida</b><span>Qué material, qué acabado y cómo se ejecuta, por escrito.</span></p></div>
+        <div class="rv d2"><i>03</i><p><b>Planificación justificada por fases</b><span>Un calendario realista de plazos y coste, sin promesas imposibles.</span></p></div>
+        <div class="rv d3"><i>04</i><p><b>Planos descriptivos y de detalle</b><span>Para fases de obra y elementos críticos, cuando el trabajo lo necesita.</span></p></div>
+      </div>
+    </div>
+
+    <div class="doc rv d1" id="doc">
+      <div class="doc-top">
+        <span class="logo"><b>KERKHU</b></span>
+        <span class="mono">Ejemplo ilustrativo<br>Reforma de portal</span>
+      </div>
+      <div class="doc-tabs" role="tablist">
+        <button class="on" data-tab="p1" role="tab">Presupuesto</button>
+        <button data-tab="p2" role="tab">Planificación</button>
+        <button data-tab="p3" role="tab">Plano</button>
+      </div>
+
+      <div class="doc-pane on" id="p1">
+        <div class="cap open">
+          <button class="cap-h"><span class="mono">CAP. 01</span><b>Trabajos previos y demoliciones</b><em>3 partidas</em><span class="pl">+</span></button>
+          <div class="cap-b"><div>
+            <div class="part head"><span>Código</span><span>Descripción</span><span class="u">Ud</span><span class="m">Medición</span></div>
+            <div class="part"><span class="c">01.01</span><div>Protección de zonas comunes y accesos durante la obra<div class="q">Calidad: <mark>lámina + cartón</mark></div></div><span class="u">m²</span><span class="m">42,00</span></div>
+            <div class="part"><span class="c">01.02</span><div>Demolición de peldañeado existente con medios manuales<div class="q">Procedimiento: <mark>sin martillo neumático</mark></div></div><span class="u">m</span><span class="m">18,60</span></div>
+            <div class="part"><span class="c">01.03</span><div>Retirada de escombros a vertedero autorizado</div><span class="u">m³</span><span class="m">3,20</span></div>
+          </div></div>
+        </div>
+        <div class="cap">
+          <button class="cap-h"><span class="mono">CAP. 02</span><b>Albañilería y estructura</b><em>3 partidas</em><span class="pl">+</span></button>
+          <div class="cap-b"><div>
+            <div class="part"><span class="c">02.01</span><div>Formación de rampa con pendiente normativa<div class="q">Calidad: <mark>hormigón HA-25</mark></div></div><span class="u">m²</span><span class="m">9,80</span></div>
+            <div class="part"><span class="c">02.02</span><div>Murete de cierre de fábrica de ladrillo</div><span class="u">m²</span><span class="m">6,40</span></div>
+            <div class="part"><span class="c">02.03</span><div>Recrecido y regularización de soporte</div><span class="u">m²</span><span class="m">24,00</span></div>
+          </div></div>
+        </div>
+        <div class="cap">
+          <button class="cap-h"><span class="mono">CAP. 03</span><b>Revestimientos y acabados</b><em>2 partidas</em><span class="pl">+</span></button>
+          <div class="cap-b"><div>
+            <div class="part"><span class="c">03.01</span><div>Revestimiento de peldaños con piedra antideslizante<div class="q">Calidad: <mark>a elegir entre 3 opciones</mark></div></div><span class="u">m</span><span class="m">18,60</span></div>
+            <div class="part"><span class="c">03.02</span><div>Pintura de paramentos en zona de actuación</div><span class="u">m²</span><span class="m">36,00</span></div>
+          </div></div>
+        </div>
+        <div class="cap">
+          <button class="cap-h"><span class="mono">CAP. 04</span><b>Instalaciones</b><em>2 partidas</em><span class="pl">+</span></button>
+          <div class="cap-b"><div>
+            <div class="part"><span class="c">04.01</span><div>Desplazamiento de punto de luz y canalización</div><span class="u">ud</span><span class="m">2,00</span></div>
+            <div class="part"><span class="c">04.02</span><div>Pasamanos de acero inoxidable en rampa</div><span class="u">m</span><span class="m">7,20</span></div>
+          </div></div>
+        </div>
+        <div class="cap">
+          <button class="cap-h"><span class="mono">CAP. 05</span><b>Gestión de residuos · Seguridad y salud</b><em>2 partidas</em><span class="pl">+</span></button>
+          <div class="cap-b"><div>
+            <div class="part"><span class="c">05.01</span><div>Gestión de residuos de construcción y demolición</div><span class="u">ud</span><span class="m">1,00</span></div>
+            <div class="part"><span class="c">05.02</span><div>Señalización y medidas de seguridad en zona común</div><span class="u">ud</span><span class="m">1,00</span></div>
+          </div></div>
+        </div>
+        <div class="doc-foot"><span>Cada partida con su precio unitario y total.</span><span class="tag">MEDICIÓN REAL EN OBRA</span></div>
+      </div>
+
+      <div class="doc-pane" id="p2">
+        <div class="gantt">
+          <div class="g-weeks"><span></span><span>S1</span><span>S2</span><span>S3</span><span>S4</span><span>S5</span><span>S6</span><span>S7</span><span>S8</span></div>
+          <div class="g-row"><span>Previos y protección</span><div class="g-track"><i class="g-bar k" style="left:0;width:12.5%"></i></div></div>
+          <div class="g-row"><span>Demoliciones</span><div class="g-track"><i class="g-bar" style="left:10%;width:18%;transition-delay:.1s"></i></div></div>
+          <div class="g-row"><span>Albañilería</span><div class="g-track"><i class="g-bar" style="left:25%;width:32%;transition-delay:.2s"></i></div></div>
+          <div class="g-row"><span>Instalaciones</span><div class="g-track"><i class="g-bar" style="left:45%;width:20%;transition-delay:.3s"></i></div></div>
+          <div class="g-row"><span>Acabados</span><div class="g-track"><i class="g-bar a" style="left:62%;width:28%;transition-delay:.4s"></i></div></div>
+          <div class="g-row"><span>Limpieza y entrega</span><div class="g-track"><i class="g-bar k" style="left:90%;width:10%;transition-delay:.5s"></i></div></div>
+        </div>
+        <div class="doc-foot"><span>Fases justificadas, con hitos de revisión.</span><span class="tag">PLAZO REALISTA</span></div>
+      </div>
+
+      <div class="doc-pane" id="p3">
+        <div class="plan-svg">
+          <svg viewBox="0 0 520 300" fill="none" stroke="#14111f" stroke-width="1.4" font-family="JetBrains Mono, monospace" font-size="10">
+            <rect x="40" y="40" width="440" height="200" stroke-width="3"/>
+            <line x1="40" y1="160" x2="230" y2="160"/>
+            <path d="M230 40v200"/>
+            <g stroke="#3d24c9">
+              <path d="M60 60h150v80H60z" stroke-dasharray="4 4"/>
+              <path d="M60 140 L210 60" />
+            </g>
+            <text x="85" y="104" fill="#3d24c9" stroke="none">RAMPA 8%</text>
+            <g>
+              <path d="M250 60h210M250 80h210M250 100h210M250 120h210M250 140h210M250 160h210M250 180h210M250 200h210M250 220h210" stroke-width=".8"/>
+            </g>
+            <text x="320" y="255" fill="#5d5871" stroke="none">ESCALERA · 9 PELDAÑOS</text>
+            <g stroke="#e0a800" stroke-width="1.2">
+              <path d="M40 22h440M40 16v12M480 16v12"/>
+              <path d="M20 40v200M14 40h12M14 240h12"/>
+            </g>
+            <rect x="236" y="12" width="48" height="16" fill="#fffdf8" stroke="none"/>
+            <text x="242" y="24" fill="#b38600" stroke="none">6,40 m</text>
+            <text x="6" y="146" fill="#b38600" stroke="none" transform="rotate(-90 12 140)">3,10 m</text>
+            <circle cx="135" cy="210" r="14" stroke="#3d24c9"/><text x="129" y="214" fill="#3d24c9" stroke="none">A</text>
+            <text x="160" y="214" fill="#5d5871" stroke="none">DETALLE A · ENCUENTRO RAMPA</text>
+          </svg>
+        </div>
+        <div class="doc-foot"><span>Planos de fases y detalles críticos.</span><span class="tag">SIN MALENTENDIDOS</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="sec" id="metodo">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="rv">Cómo trabajamos, paso a paso.</h2>
+      <p class="lead rv d1">Un perfil técnico de base y profesionales con oficio. Así garantizamos calidad en los trabajos y una planificación realista de plazos y coste.</p>
+    </div>
+    <div class="steps" id="steps">
+      <i class="bar"></i>
+      <div class="step rv"><span class="mono">Paso 01</span><h3>Visita y medición</h3><p>Vemos el espacio, escuchamos lo que necesitas y medimos en obra.</p></div>
+      <div class="step rv d1"><span class="mono">Paso 02</span><h3>Presupuesto desglosado</h3><p>Capítulos, partidas, mediciones y calidades. Todo por escrito.</p></div>
+      <div class="step rv d2"><span class="mono">Paso 03</span><h3>Plan por fases</h3><p>Calendario justificado y planos de detalle si la obra lo requiere.</p></div>
+      <div class="step rv d3"><span class="mono">Paso 04</span><h3>Ejecución y entrega</h3><p>Dirección del gerente, equipo con experiencia y obra limpia al terminar.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="sec" id="obras" style="padding-top:40px">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="rv">Obras que<br>sabemos hacer.</h2>
+      <div class="filters rv d1" id="filters">
+        <button class="on" data-f="all">Todas</button>
+        <button data-f="com">Comunidades</button>
+        <button data-f="acc">Accesibilidad</button>
+        <button data-f="est">Estructura</button>
+        <button data-f="ins">Instalaciones</button>
+      </div>
+    </div>
+    <div class="pgrid" id="pgrid">
+      <article class="proj big rv" data-c="com" data-code="K-005 · Casares"><img src="img/obra-albatros.webp" alt="Obra en urbanización Albatros, Casares" onerror="this.remove()"><span class="open">↗</span><div class="meta"><span class="mono">Comunidades · Casares</span><h3>Urbanización Albatros</h3></div></article>
+      <article class="proj tall rv d1" data-c="acc" data-code="Accesibilidad"><img src="img/obra-rampa.webp" alt="Formación de rampa de acceso en portal de edificio" onerror="this.remove()"><span class="open">↗</span><div class="meta"><span class="mono">Accesibilidad</span><h3>Formación de rampa en portal</h3></div></article>
+      <article class="proj rv" data-c="acc" data-code="Accesibilidad"><img src="img/obra-hueco-ascensor.webp" alt="Demolición de parte de escaleras de acceso para hueco de ascensor" onerror="this.remove()"><span class="open">↗</span><div class="meta"><span class="mono">Accesibilidad</span><h3>Demolición de escaleras para hueco de ascensor</h3></div></article>
+      <article class="proj rv d1" data-c="est" data-code="Estructura"><img src="img/obra-losa-1.webp" alt="Construcción de losa de hormigón para carpa" onerror="this.remove()"><span class="open">↗</span><div class="meta"><span class="mono">Estructura</span><h3>Losa de hormigón para carpa</h3></div></article>
+      <article class="proj rv" data-c="ins" data-code="Instalaciones"><img src="img/obra-acometida.webp" alt="Acometida eléctrica de edificio" onerror="this.remove()"><span class="open">↗</span><div class="meta"><span class="mono">Instalaciones</span><h3>Acometida eléctrica de edificio</h3></div></article>
+      <article class="proj rv d1" data-c="com" data-code="Comunidades"><img src="https://kerkhu.com/wp-content/uploads/2024/02/Instalacion-malla-antipajaros-en-hueco-patio-edificio-edited.jpg" alt="Instalación de malla antipájaros en patio de edificio" onerror="this.remove()"><span class="open">↗</span><div class="meta"><span class="mono">Comunidades</span><h3>Malla antipájaros en patio de edificio</h3></div></article>
+      <article class="proj rv d2" data-c="com" data-code="Comunidades"><img src="https://kerkhu.com/wp-content/uploads/2024/02/Reposicion-revestimiento-peldanos-01.jpg" alt="Reposición de revestimiento de peldaños" onerror="this.remove()"><span class="open">↗</span><div class="meta"><span class="mono">Comunidades</span><h3>Reposición de revestimiento de peldaños</h3></div></article>
+      <article class="proj big rv" data-c="est" data-code="Estructura"><img src="https://kerkhu.com/wp-content/uploads/2024/02/Formacion-murete-cierre-hueco-cocheras.jpg" alt="Formación de murete de cierre en hueco de cocheras" onerror="this.remove()"><span class="open">↗</span><div class="meta"><span class="mono">Estructura</span><h3>Murete de cierre en hueco de cocheras</h3></div></article>
+      <article class="proj rv d1" data-c="est" data-code="Estructura"><img src="https://kerkhu.com/wp-content/uploads/2024/02/Construccion-losa-hormigon-para-carpa-01.jpg" alt="Losa de hormigón para carpa, fase de hormigonado" onerror="this.remove()"><span class="open">↗</span><div class="meta"><span class="mono">Estructura</span><h3>Losa para carpa · hormigonado</h3></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- DIRECTOR -->
+<section class="sec" style="padding-top:40px">
+  <div class="wrap director">
+    <div class="dir-img rv">
+      <img src="img/direccion.webp" alt="Dirección de obra KERKHU" onerror="this.remove()">
+      <div class="badge"><strong>+30</strong><span class="mono">años en construcción</span></div>
+    </div>
+    <div>
+      <span class="mono eyebrow rv">Quién está detrás</span>
+      <blockquote class="rv d1">Una empresa pequeña con <em>criterio técnico</em> y alguien que da la cara en cada obra.</blockquote>
+      <p class="rv d2">KERKHU está radicada en Benalmádena y la dirige Miguel A. Robles, con más de 30 años de experiencia en el sector de la construcción. Trabajamos con profesionales de larga trayectoria y gran habilidad, y asesoramos en cada caso según el tipo de edificación, los recursos del cliente y sus expectativas de calidad y acabados.</p>
+      <div class="sig rv d3"><div class="av">MR</div><div><b>Miguel A. Robles</b><span>Responsable y gerente · KERKHU</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec" id="opiniones" style="padding-top:40px">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="rv">Lo que dicen quienes ya han hecho obra con nosotros.</h2>
+      <a class="g-link rv d1" href="https://search.google.com/local/reviews?placeid=ChIJh-PcziJm0QwR4Xy4evYNs74" target="_blank" rel="noopener">Ver todas las reseñas en Google ↗</a>
+    </div>
+    <div class="revs">
+      <article class="rev feat rv"><span class="stars">★★★★★</span><p>“Miguel es un gran profesional, su trabajo es impecable y me encanta el cuidado que tienen los detalles. Su personal es muy responsable y trabajan bien.”</p><footer><span class="av">ML</span><div>Martha Lernin<span>Reseña en Google</span></div></footer></article>
+      <article class="rev rv d1"><span class="stars">★★★★★</span><p>“Trabajos de reforma profesionales. De confianza. Precios acordes al trabajo realizado. Presupuestos muy detallados y profesionales.”</p><footer><span class="av">RI</span><div>Reestreno de lujo Ingrid<span>Reseña en Google</span></div></footer></article>
+      <article class="rev rv d2"><span class="stars">★★★★★</span><p>“Arregló el bloque de Residencial Madrid. Ha quedado estupendo, muy buenos profesionales.”</p><footer><span class="av">CJ</span><div>Cecilia Jiménez Guardia<span>Reseña en Google</span></div></footer></article>
+      <article class="rev rv d1"><span class="stars">★★★★★</span><p>“Ideal contractor to help you with the renovation of your home. Professional and with reasonable prices. He delivers on time and on budget.”</p><footer><span class="av">MS</span><div>Miguel-Angel Serrano Santos<span>Reseña en Google</span></div></footer></article>
+      <article class="rev rv d2"><span class="stars">★★★★★</span><p>“Formales, económicos y muy buenos trabajadores. Cien por cien recomendables.”</p><footer><span class="av">EP</span><div>Eduardo Panadero Muñoz<span>Reseña en Google</span></div></footer></article>
+    </div>
+  </div>
+</section>
+
+<!-- ZONE -->
+<section class="sec" style="padding-top:40px">
+  <div class="wrap zone">
+    <div>
+      <span class="mono eyebrow rv">Zona de trabajo</span>
+      <h2 class="rv d1" style="margin:18px 0 22px">Desde Benalmádena, por toda la Costa del Sol.</h2>
+      <p class="lead rv d2">Estamos cerca para visitar, medir y seguir la obra en persona. Cuéntanos dónde está la tuya.</p>
+    </div>
+    <svg class="rv d1" viewBox="0 0 600 300" aria-label="Mapa esquemático de la Costa del Sol">
+      <defs><linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3d24c9" stop-opacity=".25"/><stop offset="1" stop-color="#3d24c9" stop-opacity="0"/></linearGradient></defs>
+      <path d="M0 150 C60 160 90 175 130 178 C180 182 210 196 250 200 C300 204 330 190 370 168 C400 150 420 132 450 120 C490 104 540 98 600 92 L600 300 L0 300Z" fill="url(#sea)"/>
+      <path d="M0 150 C60 160 90 175 130 178 C180 182 210 196 250 200 C300 204 330 190 370 168 C400 150 420 132 450 120 C490 104 540 98 600 92" stroke="rgba(255,255,255,.35)" stroke-width="1.5" fill="none" stroke-dasharray="3 5"/>
+      <g class="town"><circle cx="40" cy="148" r="4" fill="#a9a3bf"/><text x="22" y="134">CASARES</text></g>
+      <g class="town"><circle cx="105" cy="172" r="4" fill="#a9a3bf"/><text x="80" y="160">ESTEPONA</text></g>
+      <g class="town"><circle cx="200" cy="186" r="4" fill="#a9a3bf"/><text x="174" y="172">MARBELLA</text></g>
+      <g class="town"><circle cx="290" cy="196" r="4" fill="#a9a3bf"/><text x="262" y="182">FUENGIROLA</text></g>
+      <g class="town"><circle cx="300" cy="150" r="4" fill="#a9a3bf"/><text x="280" y="136">MIJAS</text></g>
+      <g class="town home"><circle cx="372" cy="166" r="6" fill="#ffc21a"/><circle class="pulse" cx="372" cy="166" r="6" fill="#ffc21a"/><text x="330" y="146">BENALMÁDENA</text></g>
+      <g class="town"><circle cx="430" cy="130" r="4" fill="#a9a3bf"/><text x="402" y="118">TORREMOLINOS</text></g>
+      <g class="town"><circle cx="500" cy="104" r="5" fill="#a9a3bf"/><text x="484" y="88">MÁLAGA</text></g>
+      <text x="420" y="250" fill="rgba(255,255,255,.25)" font-family="JetBrains Mono" font-size="11" letter-spacing="3">MAR MEDITERRÁNEO</text>
+    </svg>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec contact" id="contacto">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="rv">Cuéntanos tu obra en 1 minuto.</h2>
+      <p class="lead rv d1">Elige las opciones y te preparamos el mensaje. Lo envías por WhatsApp o por correo, sin formularios que se pierden.</p>
+    </div>
+    <div class="cform">
+      <form class="fbox rv" id="qform" onsubmit="return false">
+        <div class="fstep"><span class="lbl"><b>01</b>¿Quién eres?</span>
+          <div class="opts" data-k="cliente"><button type="button">Particular</button><button type="button">Comunidad de propietarios</button><button type="button">Administrador de fincas</button><button type="button">Empresa / local</button></div>
+        </div>
+        <div class="fstep"><span class="lbl"><b>02</b>¿Qué necesitas?</span>
+          <div class="opts multi" data-k="obra"><button type="button">Reforma de vivienda</button><button type="button">Cocina o baño</button><button type="button">Zonas comunes</button><button type="button">Rampa / accesibilidad</button><button type="button">Hueco de ascensor</button><button type="button">Losa u hormigón</button><button type="button">Demolición</button><button type="button">Otro</button></div>
+        </div>
+        <div class="fstep frow">
+          <div><label class="lbl" for="zona"><b style="color:var(--amber);margin-right:8px">03</b>¿Dónde?</label>
+            <select id="zona"><option value="">Selecciona municipio</option><option>Benalmádena</option><option>Torremolinos</option><option>Málaga</option><option>Fuengirola</option><option>Mijas</option><option>Marbella</option><option>Estepona</option><option>Casares</option><option>Otro (Costa del Sol)</option></select></div>
+          <div><label class="lbl" for="plazo"><b style="color:var(--amber);margin-right:8px">04</b>¿Cuándo?</label>
+            <select id="plazo"><option value="">Plazo deseado</option><option>Lo antes posible</option><option>En 1–3 meses</option><option>En más de 3 meses</option><option>Solo quiero informarme</option></select></div>
+        </div>
+        <div class="fstep frow">
+          <div><label class="lbl" for="nombre">Nombre</label><input id="nombre" placeholder="Tu nombre" autocomplete="name"></div>
+          <div><label class="lbl" for="tel">Teléfono</label><input id="tel" placeholder="Para llamarte" inputmode="tel" autocomplete="tel"></div>
+        </div>
+        <div class="fstep" style="margin-bottom:0"><label class="lbl" for="det">Detalles (opcional)</label><textarea id="det" placeholder="Medidas aproximadas, estado actual, qué te gustaría conseguir…"></textarea></div>
+      </form>
+
+      <div class="preview rv d1">
+        <div class="bubble">
+          <div class="top"><div class="av">K</div><div><b>KERKHU Obras y Reformas</b><span>Tu mensaje, listo para enviar</span></div></div>
+          <div class="msg" id="msg"></div>
+          <div class="send">
+            <a class="btn wa" id="sendWa" href="https://wa.me/34653646615" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.7-.1 1.3z"/></svg>
+              Enviar por WhatsApp</a>
+            <a class="btn btn-ghost" id="sendMail" href="mailto:info@kerkhu.com">Por email</a>
+          </div>
+        </div>
+        <div class="cinfo">
+          <a href="tel:+34653646615"><span><span class="mono">Teléfono</span><br>+34 653 646 615</span><span>→</span></a>
+          <a href="mailto:info@kerkhu.com"><span><span class="mono">Email</span><br>info@kerkhu.com</span><span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-big" aria-hidden="true">KERKHU</div>
+    <div class="ft-row">
+      <span>© <span id="yr">2026</span> KERKHU Obras y Reformas · Benalmádena, Málaga</span>
+      <nav>
+        <a href="https://www.youtube.com/@KERKHUObrasyReformas" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://kerkhu.com/politica-de-privacidad/">Política de privacidad</a>
+        <a href="#top">Volver arriba ↑</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/34653646615?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20presupuesto." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.7-.1 1.3z"/></svg></a>
+<div class="mbar"><a class="btn btn-ghost" href="tel:+34653646615">Llamar</a><a class="btn btn-amber" href="#contacto">Pedir presupuesto</a></div>
+
+<div class="proposal" id="proposal"><b>PROPUESTA</b> Rediseño · vista previa <button aria-label="Cerrar" onclick="this.parentNode.remove()">×</button></div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true">
+  <button class="x" id="lbx" aria-label="Cerrar">×</button>
+  <figure><img id="lbimg" alt=""><figcaption><h3 id="lbt"></h3><span class="mono" id="lbc" style="color:var(--amber)"></span></figcaption></figure>
+</div>
+
+<script>
+(function(){
+  function safe(fn,n){try{fn()}catch(e){console.warn('init '+n,e)}}
+
+  safe(function(){ // header
+    var h=document.getElementById('hdr');
+    var f=function(){h.classList.toggle('scrolled',scrollY>30)};f();addEventListener('scroll',f,{passive:true});
+    var b=document.getElementById('burger'),m=document.getElementById('mnav');
+    b.onclick=function(){m.classList.toggle('open')};
+    m.querySelectorAll('a').forEach(function(a){a.onclick=function(){m.classList.remove('open')}});
+    document.getElementById('yr').textContent=new Date().getFullYear();
+  },'header');
+
+  safe(function(){ // reveal
+    var els=document.querySelectorAll('.rv');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.05,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(e){io.observe(e)});
+    var st=document.getElementById('steps');
+    var io2=new IntersectionObserver(function(en){if(en[0].isIntersecting){st.classList.add('in')}},{threshold:.05});io2.observe(st);
+    setTimeout(function(){els.forEach(function(e){e.classList.add('in')})},6000);
+  },'reveal');
+
+  safe(function(){ // counter
+    var el=document.querySelector('[data-count]');var n=+el.dataset.count,s=null;el.textContent='0';
+    var io=new IntersectionObserver(function(en){if(!en[0].isIntersecting)return;io.disconnect();
+      requestAnimationFrame(function t(ts){if(!s)s=ts;var p=Math.min((ts-s)/1400,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(t)})});
+    io.observe(el);setTimeout(function(){if(el.textContent==='0')el.textContent=n},4000);
+  },'counter');
+
+  safe(function(){ // budget doc
+    document.querySelectorAll('.cap-h').forEach(function(b){b.onclick=function(){b.parentNode.classList.toggle('open')}});
+    document.querySelectorAll('.doc-tabs button').forEach(function(t){t.onclick=function(){
+      document.querySelectorAll('.doc-tabs button').forEach(function(x){x.classList.toggle('on',x===t)});
+      document.querySelectorAll('.doc-pane').forEach(function(p){p.classList.toggle('on',p.id===t.dataset.tab)});
+    }});
+  },'budget');
+
+  safe(function(){ // filters + lightbox
+    var bs=document.querySelectorAll('#filters button'),ps=document.querySelectorAll('.proj');
+    bs.forEach(function(b){b.onclick=function(){bs.forEach(function(x){x.classList.toggle('on',x===b)});
+      ps.forEach(function(p){p.classList.toggle('hide',b.dataset.f!=='all'&&p.dataset.c!==b.dataset.f)})}});
+    var lb=document.getElementById('lb'),li=document.getElementById('lbimg');
+    ps.forEach(function(p){p.onclick=function(){var i=p.querySelector('img');if(!i)return;li.src=i.src;li.alt=i.alt;
+      document.getElementById('lbt').textContent=p.querySelector('h3').textContent;document.getElementById('lbc').textContent=p.dataset.code;lb.classList.add('on')}});
+    var close=function(){lb.classList.remove('on')};
+    document.getElementById('lbx').onclick=close;lb.onclick=function(e){if(e.target===lb)close()};
+    addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+  },'projects');
+
+  safe(function(){ // smart form
+    var st={cliente:'',obra:[]};
+    document.querySelectorAll('.opts').forEach(function(g){
+      var multi=g.classList.contains('multi'),k=g.dataset.k;
+      g.querySelectorAll('button').forEach(function(b){b.onclick=function(){
+        if(multi){b.classList.toggle('on');st[k]=[].map.call(g.querySelectorAll('.on'),function(x){return x.textContent})}
+        else{g.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b&&!b.classList.contains('on')?true:false)});st[k]=b.classList.contains('on')?b.textContent:''}
+        upd()}});
+    });
+    ['zona','plazo','nombre','tel','det'].forEach(function(id){document.getElementById(id).addEventListener('input',upd)});
+    function v(id){return document.getElementById(id).value.trim()}
+    function upd(){
+      var l=['Hola KERKHU, me gustaría pedir presupuesto.'];
+      if(st.cliente)l.push('• Soy: '+st.cliente);
+      if(st.obra.length)l.push('• Obra: '+st.obra.join(', '));
+      if(v('zona'))l.push('• Ubicación: '+v('zona'));
+      if(v('plazo'))l.push('• Plazo: '+v('plazo'));
+      if(v('det'))l.push('• Detalles: '+v('det'));
+      if(v('nombre')||v('tel'))l.push('','Soy '+(v('nombre')||'—')+(v('tel')?' · Tel. '+v('tel'):''));
+      var t=l.join('\n');
+      document.getElementById('msg').textContent=t;
+      document.getElementById('sendWa').href='https://wa.me/34653646615?text='+encodeURIComponent(t);
+      document.getElementById('sendMail').href='mailto:info@kerkhu.com?subject='+encodeURIComponent('Solicitud de presupuesto')+'&body='+encodeURIComponent(t);
+    }
+    upd();
+  },'form');
+})();
+</script>
+</body>
+</html>
