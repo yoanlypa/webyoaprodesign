@@ -26,7 +26,7 @@ Cada pieza tiene una pantalla de escritorio y un móvil flotante:
 
 Ids: `sculptology`, `diana-noris`, `andujar`, `vip-team`, `kerkhu`, `walk-ink`, `inkspiration`. Si falta una imagen, se ve un marcador con el nombre del proyecto. Las capturas largas se recorren solas de arriba abajo cuando la cámara llega a la pieza.
 
-Ya están las de **Vip Team** y **Diana Noris** (sacadas de sus repos de GitHub). Para el resto:
+Ya están las de **Sculptology**, **Vip Team** y **Diana Noris** (sacadas de sus repos de GitHub). Para el resto:
 `python tools/capturar.py kerkhu=https://... andujar=https://...`
 
 ## Enlace "Ver la web"
@@ -59,4 +59,4 @@ y abre http://localhost:8765
 
 Sube el contenido de la carpeta a `public_html` desde el Administrador de archivos (el `.htaccess` ya va incluido; si no aparece al subirlo, es porque tu ordenador oculta los archivos que empiezan por punto: súbelo aparte).
 
-Tras cada cambio sube el número `?v=20261022` de los `<link>` y `<script>` de `index.html` para que nadie vea la versión antigua.
+Tras cada cambio sube el número `?v=20261025` de los `<link>` y `<script>` de `index.html` para que nadie vea la versión antigua.
