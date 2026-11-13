@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plantilla tatuaje Marea Negra</title>
+<meta name="description" content="Marea Negra. Estudio de tatuaje y piercing en la Costa del Sol. Plantilla de demostración.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: una lámina de flash de estudio. Papel gris, tinta negra, reglas finas a la vista, tipografía condensada enorme; rojo para lo que se puede reservar y el violeta del papel hectográfico para lo que aún es calco. */
+:root{
+  --paper:#E8E6DF;
+  --paper-2:#DDDAD1;
+  --ink:#0C0C0D;
+  --red:#E3261B;       /* rojo de lámina tradicional */
+  --stencil:#5A3FD0;   /* violeta del calco */
+  --mute:#6A675F;
+  --f-display:"Anton","Arial Narrow","Impact",sans-serif;
+  --f-body:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --gut:clamp(16px,3.4vw,48px);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+svg{display:block;max-width:100%}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;text-transform:uppercase;line-height:.86;margin:0;letter-spacing:.005em}
+p{margin:0}
+:focus-visible{outline:3px solid var(--stencil);outline-offset:3px}
+.mono{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.wrap{padding:0 var(--gut)}
+section{border-top:1px solid var(--ink)}
+.sec{padding:clamp(56px,8vw,120px) 0}
+.h2{font-size:clamp(56px,11vw,190px)}
+.red{color:var(--red)}
+.out{color:transparent;-webkit-text-stroke:2px var(--ink)}
+.dark .out{-webkit-text-stroke-color:var(--paper)}
+.dark{background:var(--ink);color:var(--paper)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,auto);gap:24px;align-items:end;margin-bottom:clamp(28px,4vw,56px)}
+.sec-head p{max-width:44ch;color:var(--mute)}
+.dark .sec-head p{color:#A9A69D}
+.tag{display:flex;gap:12px;align-items:center;margin-bottom:16px}
+.tag::before{content:"";width:10px;height:10px;background:var(--red);border-radius:50%}
+@media (max-width:800px){.sec-head{grid-template-columns:1fr}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--ink);color:var(--paper);border:1px solid var(--ink);padding:15px 22px;font-family:var(--f-mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.btn:hover{background:var(--red);border-color:var(--red);color:#fff}
+.btn:active{transform:translateY(2px)}
+.btn.red-b{background:var(--red);border-color:var(--red);color:#fff}
+.btn.red-b:hover{background:var(--ink);border-color:var(--ink)}
+.dark .btn{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.dark .btn:hover{background:var(--red);border-color:var(--red);color:#fff}
+.btn.line{background:transparent;color:inherit}
+.chip{border:1px solid currentColor;background:transparent;padding:9px 14px;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background .15s,color .15s}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.dark .chip[aria-pressed="true"]{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--ink);display:flex;align-items:stretch;justify-content:space-between}
+.nav>*{display:flex;align-items:center}
+.logo{font-family:var(--f-display);font-size:24px;text-transform:uppercase;text-decoration:none;padding:12px var(--gut);gap:10px;line-height:1}
+.logo i{width:14px;height:14px;background:var(--ink);border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:block}
+.nav ul{list-style:none;margin:0;padding:0;gap:26px}
+.nav ul a{text-decoration:none;font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.nav ul a:hover{color:var(--red)}
+.nav-r{gap:0}
+.lang{display:flex;border-left:1px solid var(--ink);align-self:stretch}
+.lang button{border:0;background:none;padding:0 14px;font-family:var(--f-mono);font-size:12px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.nav .btn{align-self:stretch;border-width:0 0 0 1px}
+@media (max-width:920px){.nav ul{display:none}}
+@media (max-width:440px){.nav .btn{display:none}}
+
+/* hero */
+.hero{border-top:0;position:relative;overflow:hidden}
+#ink{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;mix-blend-mode:multiply}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);position:relative;z-index:2}
+.hero-l{padding:clamp(28px,4vw,56px) var(--gut) clamp(24px,3vw,40px);display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.hero h1{font-size:clamp(78px,16.5vw,290px);margin-left:-.02em}
+.hero h1 .l{display:block;overflow:hidden;padding-top:.04em}
+.hero h1 .l>span{display:block;animation:up 1s cubic-bezier(.2,.8,.2,1) both}
+.hero h1 .l:nth-child(2)>span{animation-delay:.1s}.hero h1 .l:nth-child(3)>span{animation-delay:.2s}
+@keyframes up{from{transform:translateY(105%)}to{transform:none}}
+.hero-sub{display:flex;gap:24px;align-items:end;justify-content:space-between;flex-wrap:wrap}
+.hero-sub p{max-width:40ch;font-size:clamp(17px,1.5vw,21px)}
+.hero-r{border-left:1px solid var(--ink);position:relative;display:grid;place-items:center;padding:24px;background:var(--paper-2);min-height:360px}
+.hero-r svg.art{width:min(100%,460px);height:auto;color:var(--ink)}
+.stamp{position:absolute;right:16px;top:16px;width:128px;height:128px;animation:spin 18s linear infinite;color:var(--red)}
+.stamp text{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.1em;fill:currentColor}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sheet-n{position:absolute;left:16px;bottom:14px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);position:relative;z-index:2;background:var(--paper)}
+.facts>div{padding:16px var(--gut);border-left:1px solid var(--ink);display:grid;gap:4px}
+.facts>div:first-child{border-left:0}
+.facts b{font-weight:600}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#1FA85A;margin-right:8px}
+.dot.off{background:var(--red)}
+@media (max-width:900px){.hero-r{padding-top:128px}.stamp{width:104px;height:104px}.hero-grid{grid-template-columns:1fr}.hero-r{border-left:0;border-top:1px solid var(--ink)}.facts{grid-template-columns:1fr 1fr}.facts>div:nth-child(3){border-left:0}.facts>div:nth-child(n+3){border-top:1px solid var(--ink)}}
+
+.ticker{background:var(--ink);color:var(--paper);overflow:hidden;border-top:1px solid var(--ink)}
+.ticker div{display:flex;gap:40px;width:max-content;padding:14px 0;animation:mq 34s linear infinite;font-family:var(--f-display);font-size:clamp(22px,3vw,40px);text-transform:uppercase;white-space:nowrap}
+.ticker span:nth-child(even){color:var(--red)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* trazo que se dibuja */
+.ln{fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.ln .f{fill:currentColor;stroke:none}
+.ln .thick{stroke-width:6}
+.js .draw .ln *:not(.f){stroke-dasharray:1 1;stroke-dashoffset:1.01;transition:stroke-dashoffset 1.8s cubic-bezier(.6,0,.2,1)}
+.js .draw .ln .f{opacity:0;transition:opacity .5s 1.2s}
+.js .draw.in .ln *:not(.f){stroke-dashoffset:0}
+.js .draw.in .ln .f{opacity:1}
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+
+/* flash */
+.flash-bar{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:18px}
+.flash{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ink);border:1px solid var(--ink)}
+.fl{min-width:0;background:var(--paper);border:0;padding:14px;text-align:left;cursor:pointer;display:grid;gap:10px;position:relative;transition:background .25s,color .25s;color:var(--stencil)}
+.fl .top,.fl .bot{flex-wrap:wrap;display:flex;justify-content:space-between;align-items:baseline;gap:8px;color:var(--ink);transition:color .25s}
+.fl svg{width:74%;margin:6px auto;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.fl h3{font-size:26px}
+.fl:hover,.fl[aria-pressed="true"]{background:var(--ink);color:var(--red)}
+.fl:hover .top,.fl:hover .bot,.fl[aria-pressed="true"] .top,.fl[aria-pressed="true"] .bot{color:var(--paper)}
+.fl:hover svg{transform:scale(1.08) rotate(-3deg)}
+.fl[aria-pressed="true"]::after{content:"✓";position:absolute;right:12px;top:38px;width:28px;height:28px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-size:15px}
+.fl.taken{cursor:not-allowed;color:var(--mute)}
+.fl.taken svg{opacity:.35}
+.fl.taken:hover{background:var(--paper);color:var(--mute)}
+.fl.taken:hover .top,.fl.taken:hover .bot{color:var(--ink)}
+.fl.taken:hover svg{transform:none}
+.fl.taken h3{text-decoration:line-through}
+.st{color:var(--red)}
+.fl.taken .st{color:var(--mute)}
+@media (max-width:1000px){.flash{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:640px){.flash{grid-template-columns:repeat(2,1fr)}.fl h3{font-size:21px}}
+.pick{position:fixed;left:50%;bottom:16px;transform:translate(-50%,300%);visibility:hidden;z-index:60;background:var(--red);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 10px 10px 18px;max-width:calc(100% - 24px);transition:transform .5s cubic-bezier(.2,.8,.2,1);box-shadow:6px 6px 0 var(--ink)}
+.pick.on{transform:translate(-50%,0);visibility:visible}
+.pick .btn{background:#fff;color:var(--ink);border-color:#fff;padding:10px 14px}
+.pick .x{background:none;border:0;color:#fff;font-size:20px;cursor:pointer;padding:4px 8px}
+
+/* estilos */
+.styles{display:flex;border:1px solid var(--ink);min-height:420px}
+.sty{flex:1;border:0;border-left:1px solid var(--ink);background:var(--paper);padding:18px;text-align:left;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between;gap:20px;transition:flex .6s cubic-bezier(.2,.8,.2,1),background .3s,color .3s;overflow:hidden;min-width:0}
+.sty:first-child{border-left:0}
+.sty h3{font-size:clamp(34px,4.4vw,72px);white-space:nowrap}
+.sty .more{opacity:0;max-width:44ch;transition:opacity .3s;display:grid;gap:12px}
+.sty[aria-expanded="true"]{flex:4.5;background:var(--ink);color:var(--paper)}
+.sty[aria-expanded="true"] .more{opacity:1;transition-delay:.3s}
+.sty[aria-expanded="false"] h3{font-size:clamp(26px,2.5vw,40px);writing-mode:vertical-rl;transform:rotate(180deg);align-self:flex-start}
+.sty[aria-expanded="false"] .more{display:none}
+.sty .from{color:var(--red)}
+@media (max-width:860px){.styles{flex-direction:column;min-height:0}.sty{border-left:0;border-top:1px solid var(--ink)}.sty:first-child{border-top:0}.sty[aria-expanded="false"] h3{writing-mode:horizontal-tb;transform:none}}
+
+/* presupuesto */
+.est{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1px;background:#3A3A3C;border:1px solid #3A3A3C}
+.est>div{background:var(--ink);padding:clamp(18px,3vw,36px);display:grid;gap:22px;align-content:start}
+.fg{display:grid;gap:10px}
+.fg>label,.fg>span.lab{display:flex;justify-content:space-between}
+.fg output{color:var(--red)}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:2px;background:currentColor;outline-offset:10px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--red);border:0;cursor:grab}
+input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:var(--red);border:0;cursor:grab}
+.sel{background:transparent;border:1px solid currentColor;padding:13px 12px;width:100%;border-radius:0}
+.dark .sel option{color:#000}
+.scale{position:relative;height:400px;border:1px dashed #55555A;overflow:hidden}
+.scale .card,.scale .piece{position:absolute;bottom:34px;border:1px solid var(--paper)}
+.scale .card{left:16px;border-radius:6px;border-style:dashed;display:grid;place-items:center;color:#A9A69D}
+.scale .piece{border-color:var(--red);color:var(--paper);display:grid;place-items:center;transition:width .35s cubic-bezier(.2,.8,.2,1),height .35s cubic-bezier(.2,.8,.2,1),left .35s}
+.scale .piece svg{width:86%;height:86%}
+.scale .ruler{position:absolute;left:0;right:0;bottom:0;height:24px;background:repeating-linear-gradient(90deg,#77777C 0 1px,transparent 1px var(--cm,10px));border-top:1px solid #77777C}
+.price{font-family:var(--f-display);font-size:clamp(54px,8vw,128px);line-height:.9;font-variant-numeric:tabular-nums}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.note{font-size:13px;color:#A9A69D}
+@media (max-width:900px){.est{grid-template-columns:1fr}}
+
+/* artistas */
+.arts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ink);border:1px solid var(--ink)}
+.art-c{background:var(--paper);padding:18px;display:grid;gap:14px;align-content:start}
+.blot{background:#fff;aspect-ratio:1;overflow:hidden;border:1px solid var(--ink);position:relative}
+.blot canvas{width:100%;height:100%;filter:blur(5px) contrast(30);display:block}
+.blot .n{position:absolute;left:10px;top:8px}
+.art-c h3{font-size:clamp(40px,4.6vw,72px)}
+.art-c ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.art-c li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--ink);font-size:15px}
+.art-c li span:first-child{color:var(--mute)}
+@media (max-width:900px){.arts{grid-template-columns:1fr}.blot{aspect-ratio:16/9}}
+
+/* cita */
+.book{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);border:1px solid var(--ink)}
+.book-l{padding:clamp(18px,3vw,36px);display:grid;gap:22px;align-content:start}
+.book-r{border-left:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:clamp(18px,3vw,36px);display:grid;gap:16px;align-content:start}
+.prog{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.prog button{border:0;background:none;padding:0;text-align:left;cursor:pointer;display:grid;gap:8px;color:var(--mute)}
+.prog button::before{content:"";height:4px;background:var(--paper-2);transition:background .3s}
+.prog button.done::before,.prog button.cur::before{background:var(--red)}
+.prog button.cur{color:var(--ink)}
+.step{display:none;gap:18px}
+.step.cur{display:grid;animation:in .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes in{from{opacity:0;transform:translateX(18px)}}
+.inp{background:transparent;border:1px solid var(--ink);padding:13px 12px;width:100%;border-radius:0}
+textarea.inp{min-height:110px;resize:vertical}
+.file{border:1px dashed var(--ink);padding:16px;display:flex;gap:14px;align-items:center;cursor:pointer}
+.file img{width:64px;height:64px;object-fit:cover;border:1px solid var(--ink)}
+.file input{position:absolute;opacity:0;width:1px;height:1px}
+.file:focus-within{outline:3px solid var(--stencil);outline-offset:3px}
+.book-nav{display:flex;justify-content:space-between;gap:10px}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.check input{width:20px;height:20px;accent-color:var(--red);margin-top:2px}
+.msg{font-family:var(--f-mono);font-size:13.5px;line-height:1.6;white-space:pre-wrap;background:#1A1A1C;border:1px solid #3A3A3C;padding:16px;min-height:200px}
+.sent{display:none;border:1px solid var(--red);padding:12px;font-size:14px}
+.sent.on{display:block}
+.err{color:var(--red);font-size:14px;min-height:1.2em}
+@media (max-width:900px){.book{grid-template-columns:1fr}.book-r{border-left:0;border-top:1px solid var(--ink)}}
+
+/* cuidados + faq */
+.care{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px)}
+.tabs{display:flex;border:1px solid var(--ink)}
+.tabs button{flex:1;border:0;border-left:1px solid var(--ink);background:none;padding:12px 8px;cursor:pointer}
+.tabs button:first-child{border-left:0}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.care ol{margin:18px 0 0;padding:0;list-style:none;counter-reset:c;display:grid}
+.care li{counter-increment:c;display:grid;grid-template-columns:44px 1fr;padding:14px 0;border-bottom:1px solid var(--ink);animation:in .4s both}
+.care li::before{content:counter(c,decimal-leading-zero);font-family:var(--f-mono);font-size:12px;color:var(--red);padding-top:4px}
+details{border-bottom:1px solid var(--ink)}
+details:first-of-type{border-top:1px solid var(--ink)}
+summary{list-style:none;cursor:pointer;padding:16px 0;display:flex;justify-content:space-between;gap:16px;font-weight:600;font-size:18px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--f-mono);font-size:22px;line-height:1;transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg);color:var(--red)}
+details p{padding:0 0 18px;max-width:58ch;color:var(--mute)}
+@media (max-width:900px){.care{grid-template-columns:1fr}}
+
+/* vacaciones */
+.holiday{background:var(--red);color:#fff}
+.holiday .tag::before{background:#fff}
+.holiday .h2 .out{-webkit-text-stroke-color:#fff}
+.hol{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #fff;margin-top:clamp(28px,4vw,56px)}
+.hol>div{padding:18px 18px 0 0;display:grid;gap:8px;align-content:start}
+.hol b{font-family:var(--f-display);font-weight:400;font-size:clamp(30px,3.2vw,46px);line-height:.95;text-transform:uppercase}
+@media (max-width:900px){.hol{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.hol{grid-template-columns:1fr}}
+
+/* opiniones + visita */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ink);border:1px solid var(--ink)}
+.quotes figure{margin:0;background:var(--paper);padding:22px;display:grid;gap:26px;align-content:space-between}
+.quotes blockquote{margin:0;font-size:clamp(20px,1.9vw,26px);line-height:1.25;font-weight:500}
+.quotes figcaption{color:var(--mute)}
+@media (max-width:900px){.quotes{grid-template-columns:1fr}}
+.visit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1px;background:#3A3A3C}
+.visit>div{background:var(--ink);padding:clamp(20px,4vw,56px) var(--gut)}
+.hours{width:100%;border-collapse:collapse;margin-top:18px;font-variant-numeric:tabular-nums}
+.hours td{padding:9px 0;border-bottom:1px solid #3A3A3C}
+.hours td:last-child{text-align:right}
+.hours tr.today td{color:var(--red)}
+.contact-l{display:grid;gap:14px;margin-top:22px}
+.contact-l a{font-family:var(--f-display);font-size:clamp(34px,4.4vw,64px);text-transform:uppercase;text-decoration:none;line-height:.95}
+.contact-l a:hover{color:var(--red)}
+.map{width:100%;height:100%;min-height:300px;color:var(--paper)}
+@media (max-width:900px){.visit{grid-template-columns:1fr}}
+footer{background:var(--ink);color:var(--paper);border-top:1px solid #3A3A3C;overflow:hidden}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:18px var(--gut);color:#A9A69D}
+.giant{font-family:var(--f-display);text-transform:uppercase;font-size:clamp(60px,17.5vw,360px);line-height:.8;text-align:center;white-space:nowrap;margin-bottom:-.06em;user-select:none}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker div,.stamp{animation:none}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="#top"><i></i>Marea Negra</a>
+  <ul>
+    <li><a href="#flash">Flash</a></li>
+    <li><a href="#estilos" data-en="Styles">Estilos</a></li>
+    <li><a href="#precio" data-en="Pricing">Presupuesto</a></li>
+    <li><a href="#artistas" data-en="Artists">Artistas</a></li>
+    <li><a href="#cuidados" data-en="Aftercare">Cuidados</a></li>
+    <li><a href="#visita" data-en="Visit">Visita</a></li>
+  </ul>
+  <div class="nav-r">
+    <div class="lang" role="group" aria-label="Idioma"><button type="button" data-lang="es" aria-pressed="true">ES</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+    <a class="btn red-b" href="#cita" data-en="Book now">Pedir cita</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <canvas id="ink" aria-hidden="true"></canvas>
+  <div class="hero-grid">
+    <div class="hero-l">
+      <p class="mono" data-en="Tattoo and piercing studio · Benalmádena Costa · Since 2016">Estudio de tatuaje y piercing · Benalmádena Costa · Desde 2016</p>
+      <h1><span class="l"><span data-en="Ink">Tinta</span></span><span class="l"><span class="out" data-en="that">que se</span></span><span class="l"><span class="red" data-en="stays.">queda.</span></span></h1>
+      <div class="hero-sub">
+        <p data-en="Custom designs and studio flash, drawn with you and inked without hurry. You know the price before you sit down.">Diseño a medida y flash de estudio, dibujado contigo y tatuado sin prisa. Sabes el precio antes de sentarte.</p>
+        <div class="chips"><a class="btn" href="#cita" data-en="Book now →">Pedir cita →</a><a class="btn line" href="#precio" data-en="How much is it?">¿Cuánto cuesta?</a></div>
+      </div>
+    </div>
+    <div class="hero-r draw" id="heroArt">
+      <svg class="stamp" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="circ" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs><text><textPath href="#circ" id="stampT">WALK-INS · SÁBADOS 11 A 15 · SIN CITA ·</textPath></text><circle cx="60" cy="60" r="6" fill="currentColor"/></svg>
+      <svg class="art" viewBox="0 0 400 470" role="img" aria-label="Lámina de flash"></svg>
+      <span class="mono sheet-n" data-en="Sheet 01 · Autumn 2026">Lámina 01 · Otoño 2026</span>
+    </div>
+  </div>
+  <div class="facts">
+    <div><span class="mono" data-en="Today">Hoy</span><b id="openNow">—</b></div>
+    <div><span class="mono" data-en="Deposit">Señal</span><b data-en="€50, taken off the price">50 €, se descuenta del precio</b></div>
+    <div><span class="mono" data-en="Studio minimum">Mínimo de estudio</span><b>60 €</b></div>
+    <div><span class="mono" data-en="We reply in">Respondemos en</span><b data-en="Spanish and English, same day">Español e inglés, en el día</b></div>
+  </div>
+  <div class="ticker" aria-hidden="true"><div id="tick"></div></div>
+</section>
+
+<section class="sec" id="flash">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="mono tag" data-en="Studio flash · One of each">Flash de estudio · Uno de cada</p><h2 class="h2 rv" data-en="Pick it. <span class='red'>It’s yours.</span>">Elige. <span class="red">Es tuyo.</span></h2></div>
+      <p class="rv" data-en="Each design is tattooed once. When someone books it, it leaves the sheet. Tap one to take it to your booking.">Cada diseño se tatúa una sola vez. Cuando alguien lo reserva, sale de la lámina. Toca uno para llevarlo a tu cita.</p>
+    </div>
+    <div class="flash-bar"><div class="chips" id="fChips" role="group" aria-label="Estilo"></div><span class="mono" id="fCount" aria-live="polite"></span></div>
+    <div class="flash" id="flashGrid"></div>
+  </div>
+</section>
+
+<section class="sec" id="estilos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="mono tag" data-en="What we do">Lo que hacemos</p><h2 class="h2 rv" data-en="Five <span class='out'>trades.</span>">Cinco <span class="out">oficios.</span></h2></div>
+      <p class="rv" data-en="We would rather do five things well than everything halfway. If your idea calls for another hand, we will tell you who.">Preferimos hacer cinco cosas bien que todas a medias. Si tu idea pide otra mano, te decimos a quién ir.</p>
+    </div>
+    <div class="styles rv" id="styles"></div>
+  </div>
+</section>
+
+<section class="sec dark" id="precio">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="mono tag" data-en="Price guide">Presupuesto orientativo</p><h2 class="h2 rv" data-en="How much <span class='red'>is it?</span>">¿Cuánto <span class="red">cuesta?</span></h2></div>
+      <p class="rv" data-en="The question we get most on Instagram, answered here. Move the size and see the piece next to a bank card.">La pregunta que más nos hacen por Instagram, respondida aquí. Mueve el tamaño y mira la pieza junto a una tarjeta.</p>
+    </div>
+    <div class="est rv" id="est">
+      <div>
+        <div class="fg"><label class="mono" for="eFlash" data-en="Design">Diseño</label><select class="sel" id="eFlash"></select></div>
+        <div class="fg"><label class="mono" for="eSize"><span data-en="Size (longest side)">Tamaño (lado más largo)</span><output id="eSizeO">8 cm</output></label><input type="range" id="eSize" min="3" max="30" value="8"></div>
+        <div class="fg"><span class="mono lab" data-en="Style">Estilo</span><div class="chips" id="eStyle"></div></div>
+        <div class="fg"><span class="mono lab" data-en="Placement">Zona</span><div class="chips" id="eZone"></div></div>
+      </div>
+      <div>
+        <div class="scale" id="scale" aria-hidden="true"><div class="card mono" data-en="card">tarjeta</div><div class="piece" id="piece"></div><div class="ruler"></div></div>
+        <div><span class="mono" data-en="Estimated price">Precio estimado</span><div class="price" id="ePrice">—</div></div>
+        <div class="two"><div><span class="mono" data-en="Session">Sesión</span><br><b id="eTime">—</b></div><div><span class="mono" data-en="Healing">Curación</span><br><b data-en="2 to 3 weeks">2 a 3 semanas</b></div></div>
+        <a class="btn" href="#cita" id="eCta" data-en="Book with this estimate →">Pedir cita con este presupuesto →</a>
+        <p class="note" data-en="Guide price with demo rates. The final price is confirmed when we see your idea.">Precio orientativo con tarifas de demostración. El precio final se confirma al ver tu idea.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="artistas">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="mono tag" data-en="The team">El equipo</p><h2 class="h2 rv" data-en="Three <span class='out'>hands.</span>">Tres <span class="out">manos.</span></h2></div>
+      <p class="rv" data-en="Each artist has their own ink blot, generated new on every visit. Their work will be here; for now, their next free slot.">Cada artista tiene su mancha de tinta, distinta en cada visita. Aquí irán sus trabajos; de momento, su próximo hueco libre.</p>
+    </div>
+    <div class="arts" id="arts"></div>
+  </div>
+</section>
+
+<section class="sec" id="cita" style="background:var(--paper-2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="mono tag" data-en="Booking · 4 steps · 1 minute">Cita · 4 pasos · 1 minuto</p><h2 class="h2 rv" data-en="Tell us <span class='red'>your idea.</span>">Cuéntanos <span class="red">tu idea.</span></h2></div>
+      <p class="rv" data-en="Fill it in and we get everything we need in one message, so we can reply with a price and a date instead of ten questions.">Rellénalo y nos llega todo lo necesario en un solo mensaje, para responderte con precio y fecha en vez de con diez preguntas.</p>
+    </div>
+    <form class="book rv" id="book" novalidate>
+      <div class="book-l">
+        <div class="prog" id="prog"></div>
+        <div class="step cur" data-step="0">
+          <div class="fg"><label class="mono" for="bIdea" data-en="Your idea">Tu idea</label><textarea class="inp" id="bIdea" data-en-ph="A swallow on the forearm, fine line, no colour…" placeholder="Una golondrina en el antebrazo, línea fina, sin color…"></textarea></div>
+          <label class="file"><input type="file" id="bFile" accept="image/*"><img id="bPrev" alt="" hidden><span><b data-en="Add a reference image">Añade una imagen de referencia</b><br><span class="mono" id="bFileN" data-en="Optional · it stays on your device in this demo">Opcional · en esta demo no sale de tu dispositivo</span></span></label>
+        </div>
+        <div class="step" data-step="1">
+          <div class="fg"><span class="mono lab" data-en="Placement">Zona del cuerpo</span><div class="chips" id="bZone"></div></div>
+          <div class="fg"><label class="mono" for="bSize"><span data-en="Approximate size">Tamaño aproximado</span><output id="bSizeO">8 cm</output></label><input type="range" id="bSize" min="3" max="30" value="8"></div>
+        </div>
+        <div class="step" data-step="2">
+          <div class="fg"><span class="mono lab" data-en="Artist">Artista</span><div class="chips" id="bArt"></div></div>
+          <div class="fg"><span class="mono lab" data-en="Days that suit you">Días que te vienen bien</span><div class="chips" id="bDays"></div></div>
+          <div class="fg"><span class="mono lab" data-en="Time">Horario</span><div class="chips" id="bTime"></div></div>
+        </div>
+        <div class="step" data-step="3">
+          <div class="two"><div class="fg"><label class="mono" for="bName" data-en="Name">Nombre</label><input class="inp" id="bName" autocomplete="name"></div><div class="fg"><label class="mono" for="bTel" data-en="Phone">Teléfono</label><input class="inp" id="bTel" type="tel" autocomplete="tel"></div></div>
+          <label class="check"><input type="checkbox" id="bAge"><span data-en="I am over 18.">Soy mayor de 18 años.</span></label>
+        </div>
+        <p class="err" id="bErr" role="alert"></p>
+        <div class="book-nav"><button class="btn line" type="button" id="bPrevB" data-en="← Back">← Atrás</button><button class="btn red-b" type="submit" id="bNext">Siguiente →</button></div>
+      </div>
+      <div class="book-r">
+        <span class="mono" data-en="This is how your request arrives">Así llega tu solicitud</span>
+        <div class="msg" id="bMsg"></div>
+        <p class="sent" id="bSent" role="status" data-en="Demo form: nothing was sent. On the live site this message opens in WhatsApp, ready to send to the studio.">Formulario de demostración: no se ha enviado nada. En la web real este mensaje se abre en WhatsApp, listo para enviar al estudio.</p>
+        <p class="note" data-en="A €50 deposit confirms the date and is taken off the final price.">La cita se confirma con 50 € de señal, que se descuentan del precio final.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="sec" id="cuidados">
+  <div class="wrap care">
+    <div>
+      <p class="mono tag" data-en="Aftercare">Cuidados</p>
+      <h2 class="h2 rv" style="font-size:clamp(48px,7.6vw,128px)" data-en="Half the tattoo <span class='red'>is yours.</span>">La mitad del tatuaje <span class="red">la haces tú.</span></h2>
+      <div class="tabs mono" role="tablist" id="tabs" style="margin-top:28px"></div>
+      <ol id="careList"></ol>
+      <p class="note" style="color:var(--mute);margin-top:14px" data-en="Always follow what your artist tells you. If redness spreads, or you notice heat or pus, write to us and see a doctor.">Sigue siempre lo que te indique tu tatuador. Si el enrojecimiento crece o notas calor o pus, escríbenos y consulta a un médico.</p>
+    </div>
+    <div>
+      <p class="mono tag" data-en="Questions">Preguntas</p>
+      <div id="faq"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec holiday">
+  <div class="wrap">
+    <p class="mono tag" style="--x:0" data-en="On holiday on the Costa del Sol">De vacaciones en la Costa del Sol</p>
+    <h2 class="h2 rv" data-en="Leaving Sunday? <span class='out'>Wear it home.</span>">¿Te vas el domingo? <span class="out">Llévatelo puesto.</span></h2>
+    <div class="hol">
+      <div><b data-en="Come at the end">Ven al final</b><p data-en="A fresh tattoo cannot go in the sea, the pool or the sun. Book it for your last days.">Un tatuaje reciente no puede ir al mar, a la piscina ni al sol. Resérvalo para tus últimos días.</p></div>
+      <div><b data-en="Saturdays, no booking">Sábados sin cita</b><p data-en="Walk-ins from 11:00 to 15:00 for studio flash and small pieces.">De 11:00 a 15:00 atendemos sin cita para flash de estudio y piezas pequeñas.</p></div>
+      <div><b data-en="Under two hours">Menos de dos horas</b><p data-en="Most pieces up to 10 cm are done in one sitting.">La mayoría de piezas de hasta 10 cm se terminan en una sola sesión.</p></div>
+      <div><b data-en="In your language">En tu idioma</b><p data-en="We reply on WhatsApp in Spanish and English, and you get the aftercare sheet in both.">Respondemos por WhatsApp en español e inglés, y te llevas la hoja de cuidados en los dos.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <p class="mono tag" data-en="Reviews (sample text)">Opiniones (texto de ejemplo)</p>
+    <div class="quotes">
+      <figure class="rv"><blockquote data-en="“I came in with a blurry photo and left with exactly the drawing I had in my head.”">«Llegué con una foto borrosa y salí con el dibujo exacto que tenía en la cabeza.»</blockquote><figcaption class="mono">Lucía · <span data-en="Fine line, forearm">Línea fina, antebrazo</span></figcaption></figure>
+      <figure class="rv"><blockquote data-en="“They told me the price before starting and it was that price. Nothing more to add.”">«Me dijeron el precio antes de empezar y fue ese precio. No hay más que decir.»</blockquote><figcaption class="mono">Óscar · <span data-en="Traditional, calf">Tradicional, gemelo</span></figcaption></figure>
+      <figure class="rv"><blockquote data-en="“Booked from Manchester, tattooed on the Friday, flew home on the Sunday. Healed perfectly.”">«Reservé desde Mánchester, me tatué el viernes y volé el domingo. Curó perfecto.»</blockquote><figcaption class="mono">Hannah · <span data-en="Studio flash, ankle">Flash de estudio, tobillo</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="visita">
+  <div class="visit">
+    <div>
+      <p class="mono tag" data-en="Visit">Visita</p>
+      <h2 class="h2" style="font-size:clamp(48px,7vw,120px)" data-en="Come <span class='red'>by.</span>">Pásate <span class="red">por aquí.</span></h2>
+      <div class="contact-l"><a href="tel:+34600000000">600 000 000</a><span class="mono">hola@tuestudio.es · @tuestudio</span><span data-en="Av. del Mar 00, Benalmádena Costa. Two minutes from the promenade.">Av. del Mar 00, Benalmádena Costa. A dos minutos del paseo marítimo.</span></div>
+      <table class="hours" id="hours"></table>
+    </div>
+    <div style="padding:0"><svg class="map" viewBox="0 0 600 420" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Plano de situación"><rect width="600" height="420" fill="#0C0C0D"/><g stroke="#2E2E31" stroke-width="1"><path d="M0 80h600M0 150h600M0 220h470M0 290h400M90 0v420M190 0v420M290 0v400M390 0v330M490 0v260"/></g><path d="M600 250C520 270 470 330 430 420H600Z" fill="#17171A"/><path d="M600 250C520 270 470 330 430 420" fill="none" stroke="currentColor" stroke-width="2"/><g fill="none" stroke="#3A3A3C" stroke-width="2"><path d="M600 280C540 296 500 346 468 420M600 312C560 324 530 366 508 420"/></g><path d="M0 220h470" stroke="currentColor" stroke-width="3"/><g transform="translate(290 220)"><circle r="26" fill="none" stroke="#E3261B" stroke-width="2"><animate attributeName="r" values="10;34" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0" dur="2s" repeatCount="indefinite"/></circle><circle r="9" fill="#E3261B"/></g><text x="306" y="204" fill="currentColor" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1.5">MAREA NEGRA</text><text x="500" y="392" fill="#77777C" font-family="IBM Plex Mono,monospace" font-size="12" letter-spacing="2">MAR</text></svg></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="row mono"><span>© 2026 Marea Negra · <span data-en="Fictional studio. Demo designs, prices and reviews.">Estudio ficticio. Diseños, precios y opiniones de demostración.</span></span><span data-en="Legal notice · Privacy · Health licence">Aviso legal · Privacidad · Autorización sanitaria</span></div>
+  <div class="giant" aria-hidden="true">Marea Negra</div>
+</footer>
+
+<div class="pick" id="pick" role="status"><span id="pickT"></span><a class="btn" href="#cita" id="pickGo"></a><button class="x" type="button" id="pickX" aria-label="Quitar">×</button></div>
+
+<script>
+(function(){
+"use strict";
+document.documentElement.classList.add("js");
+var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+function safe(fn,n){try{fn()}catch(e){console.warn("init "+n,e)}}
+var lang="es";function T(o){return typeof o==="string"?o:(o[lang]||o.es)}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+
+/* ---------- motivos de flash (dibujos propios, viewBox 120) ---------- */
+function rays(){var s="";for(var k=0;k<12;k++)s+='<path d="M60 '+(k%2?33:30)+'V'+(k%2?24:13)+'" transform="rotate('+k*30+' 60 60)"/>';return s}
+var M={
+ daga:'<path d="M60 10L71 70H49Z"/><path d="M60 24V70"/><path d="M36 70h48v8H36z"/><path d="M54 78h12v22H54z"/><path d="M54 85l12 4M54 92l12 4"/><circle cx="60" cy="106" r="5"/>',
+ luna:'<path d="M70 18a42 42 0 1 0 32 66a34 34 0 1 1-32-66z"/><path d="M94 30l2.5 7 7 2.5-7 2.5-2.5 7-2.5-7-7-2.5 7-2.5z"/><path d="M104 60l1.5 4 4 1.5-4 1.5-1.5 4-1.5-4-4-1.5 4-1.5z"/><circle class="f" cx="80" cy="52" r="1.8"/>',
+ rosa:'<path d="M60 50a7 7 0 1 1-7 7"/><path d="M60 42a15 15 0 1 1-15 15"/><path d="M38 44q22-22 44 0"/><path d="M33 58q-2 28 27 30q29-2 27-30"/><path d="M60 88v24"/><path d="M60 100q-17-9-25 3q15 8 25-3z"/><path d="M60 106q17-9 25 3q-15 8-25-3z"/>',
+ serpiente:'<path class="thick" d="M28 104c32 2 56-8 54-24c-2-14-42-8-44-26c-2-16 26-22 42-18"/><ellipse class="f" cx="88" cy="35" rx="11" ry="7" transform="rotate(-14 88 35)"/><path d="M98 32l11-5M98 32l12 3"/>',
+ ancla:'<circle cx="60" cy="20" r="7"/><path d="M60 27v74"/><path d="M42 44h36"/><path d="M24 72c4 22 20 30 36 30s32-8 36-30"/><path d="M18 82l6-12 9 8M102 82l-6-12-9 8"/>',
+ ojo:'<path d="M12 62q48-42 96 0q-48 42-96 0z"/><circle cx="60" cy="62" r="15"/><circle class="f" cx="60" cy="62" r="6"/><path d="M60 14v12M36 20l5 10M84 20l-5 10M17 36l8 8M103 36l-8 8"/><path d="M60 96q-7 10 0 16q7-6 0-16z"/>',
+ corazon:'<path d="M60 104C18 74 20 42 42 40c10-1 16 6 18 12c2-6 8-13 18-12c22 2 24 34-18 64z"/><path d="M60 40c-9-10 2-15 0-28c11 9 11 19 0 28z"/><path d="M31 66q29 13 58 0"/>',
+ ola:'<path d="M8 92c14-42 46-60 72-48c15 7 15 27 0 29c-11 1-15-10-7-15"/><path d="M8 92h104"/><path d="M8 106q26-10 52 0t52 0"/><circle class="f" cx="96" cy="36" r="2"/><circle class="f" cx="104" cy="50" r="1.6"/><circle class="f" cx="88" cy="26" r="1.6"/>',
+ sol:'<circle cx="60" cy="60" r="17"/>'+rays()+'<path d="M53 57h3M64 57h3M54 65q6 5 12 0"/>',
+ polilla:'<ellipse cx="60" cy="60" rx="4" ry="20"/><path d="M56 46C38 18 10 28 13 50c2 15 24 17 43 10"/><path d="M64 46C82 18 110 28 107 50c-2 15-24 17-43 10"/><path d="M56 64c-15 4-30 11-26 27c9 10 22-6 26-19"/><path d="M64 64c15 4 30 11 26 27c-9 10-22-6-26-19"/><path d="M58 40q-7-14-16-15M62 40q7-14 16-15"/><circle class="f" cx="34" cy="44" r="3"/><circle class="f" cx="86" cy="44" r="3"/>',
+ rayo:'<path d="M70 8L32 66h24L44 112l44-64H64z"/>',
+ olivo:'<path d="M22 104Q60 72 100 18"/><ellipse cx="40" cy="74" rx="13" ry="4.5" transform="rotate(-70 40 74)"/><ellipse cx="62" cy="80" rx="13" ry="4.5" transform="rotate(-8 62 80)"/><ellipse cx="58" cy="50" rx="13" ry="4.5" transform="rotate(-76 58 50)"/><ellipse cx="82" cy="58" rx="13" ry="4.5" transform="rotate(-14 82 58)"/><ellipse cx="78" cy="28" rx="12" ry="4.5" transform="rotate(-80 78 28)"/><circle class="f" cx="48" cy="92" r="5"/><circle class="f" cx="92" cy="40" r="5"/>'
+};
+function svg(k,cls){return '<svg viewBox="0 0 120 120" aria-hidden="true"><g class="ln '+(cls||"")+'">'+M[k]+'</g></svg>'}
+function norm(root){$$(".ln *",root).forEach(function(e){if(!e.classList.contains("f"))e.setAttribute("pathLength","1")})}
+
+var STY={trad:{es:"Tradicional",en:"Traditional",k:1.1},fina:{es:"Línea fina",en:"Fine line",k:1},black:{es:"Blackwork",en:"Blackwork",k:1.2},real:{es:"Microrrealismo",en:"Micro-realism",k:1.55},letra:{es:"Lettering",en:"Lettering",k:.9}};
+var ZON=[{id:"antebrazo",es:"Antebrazo",en:"Forearm",k:1},{id:"hombro",es:"Hombro",en:"Shoulder",k:1},{id:"gemelo",es:"Gemelo",en:"Calf",k:1},{id:"tobillo",es:"Tobillo",en:"Ankle",k:1.05},{id:"costillas",es:"Costillas",en:"Ribs",k:1.15},{id:"mano",es:"Mano",en:"Hand",k:1.15}];
+var F=[
+ {n:1,k:"daga",s:"trad",cm:12,t:{es:"Daga",en:"Dagger"}},{n:2,k:"luna",s:"fina",cm:6,t:{es:"Luna",en:"Moon"}},
+ {n:3,k:"rosa",s:"trad",cm:10,t:{es:"Rosa",en:"Rose"}},{n:4,k:"serpiente",s:"black",cm:14,t:{es:"Serpiente",en:"Snake"},taken:1},
+ {n:5,k:"ancla",s:"trad",cm:9,t:{es:"Ancla",en:"Anchor"}},{n:6,k:"ojo",s:"black",cm:8,t:{es:"El ojo",en:"The eye"}},
+ {n:7,k:"corazon",s:"trad",cm:9,t:{es:"Corazón",en:"Heart"}},{n:8,k:"ola",s:"fina",cm:7,t:{es:"Ola",en:"Wave"}},
+ {n:9,k:"sol",s:"fina",cm:6,t:{es:"Sol",en:"Sun"},taken:1},{n:10,k:"polilla",s:"black",cm:11,t:{es:"Polilla",en:"Moth"}},
+ {n:11,k:"rayo",s:"black",cm:5,t:{es:"Rayo",en:"Bolt"}},{n:12,k:"olivo",s:"fina",cm:10,t:{es:"Olivo",en:"Olive branch"}}];
+var ARTISTS=[
+ {id:"nerea",name:"Nerea",seed:7,sp:{es:"Línea fina y botánico",en:"Fine line and botanical"},yrs:9,off:3},
+ {id:"dani",name:"Dani",seed:23,sp:{es:"Tradicional y blackwork",en:"Traditional and blackwork"},yrs:12,off:6},
+ {id:"lua",name:"Lúa",seed:41,sp:{es:"Microrrealismo y piercing",en:"Micro-realism and piercing"},yrs:6,off:2}];
+var HOURS=[null,null,[11,20],[11,20],[11,20],[11,20],[11,20]]; /* dom, lun, mar… sáb */
+var st={fStyle:"",pick:null,eStyle:"trad",eZone:"antebrazo",step:0,bZone:"antebrazo",bArt:"",bDays:{},bTime:""};
+
+function price(cm,sk,zk){var v=Math.pow(cm,1.45)*8*STY[sk].k*zk;return Math.max(60,v)}
+function r10(n){return Math.round(n/10)*10}
+function fromP(f){return r10(price(f.cm,f.s,1)*.9)}
+
+/* ---------- flash ---------- */
+function drawFlash(){
+  var L=F.filter(function(f){return !st.fStyle||f.s===st.fStyle}),free=L.filter(function(f){return !f.taken}).length;
+  $("#fCount").textContent=free+(lang==="en"?" available of ":" disponibles de ")+L.length;
+  $("#flashGrid").innerHTML=L.map(function(f){var n=("0"+f.n).slice(-2);
+    return '<button type="button" class="fl draw in'+(f.taken?" taken":"")+'" data-n="'+f.n+'" aria-pressed="'+(st.pick===f.n)+'"'+(f.taken?' aria-disabled="true"':'')+'><span class="top mono"><span>Nº '+n+'</span><span class="st">'+(f.taken?(lang==="en"?"Booked":"Reservado"):(lang==="en"?"Available":"Disponible"))+'</span></span>'+svg(f.k)+'<span class="bot"><h3>'+T(f.t)+'</h3><span class="mono">'+f.cm+' cm · '+(lang==="en"?"from ":"desde ")+fromP(f)+' €</span></span></button>'}).join("");
+  norm($("#flashGrid"));
+}
+function drawChips(){
+  var ks=["","trad","fina","black"];
+  $("#fChips").innerHTML=ks.map(function(k){return '<button type="button" class="chip" data-s="'+k+'" aria-pressed="'+(st.fStyle===k)+'">'+(k?T(STY[k]):(lang==="en"?"All":"Todo"))+'</button>'}).join("");
+}
+function showPick(){
+  var f=F.filter(function(x){return x.n===st.pick})[0],p=$("#pick");
+  if(!f){p.classList.remove("on");return}
+  $("#pickT").innerHTML='<span class="mono">Nº '+("0"+f.n).slice(-2)+'</span> <b>'+T(f.t)+'</b>';
+  $("#pickGo").textContent=lang==="en"?"Book this one →":"Reservar este →";p.classList.add("on");
+}
+
+/* ---------- estilos ---------- */
+var STYLES=[
+ {k:"trad",d:{es:"Línea gruesa, negro sólido y cuatro colores. Lo que mejor envejece.",en:"Bold line, solid black and four colours. What ages best."}},
+ {k:"fina",d:{es:"Trazo de una sola aguja para piezas pequeñas y botánicas.",en:"Single-needle work for small and botanical pieces."}},
+ {k:"black",d:{es:"Solo negro: geometría, ornamental y cover-up de tatuajes antiguos.",en:"Black only: geometry, ornamental and cover-ups of old tattoos."}},
+ {k:"real",d:{es:"Retratos y animales en pocos centímetros. Dos sesiones si hace falta.",en:"Portraits and animals in a few centimetres. Two sessions if needed."}},
+ {k:"pier",n:{es:"Piercing",en:"Piercing"},d:{es:"Lóbulo, hélix, nostril y septum con titanio de grado implante. Sin pistola.",en:"Lobe, helix, nostril and septum in implant-grade titanium. No gun."},from:25}];
+var openSty=0;
+function drawStyles(){
+  $("#styles").innerHTML=STYLES.map(function(s,i){var name=s.n?T(s.n):T(STY[s.k]),from=s.from||r10(price(5,s.k,1));
+    return '<button type="button" class="sty" data-i="'+i+'" aria-expanded="'+(i===openSty)+'"><span class="mono from">'+(lang==="en"?"From ":"Desde ")+from+' €</span><span><h3>'+name+'</h3></span><span class="more"><span>'+T(s.d)+'</span></span></button>'}).join("");
+}
+
+/* ---------- presupuesto ---------- */
+function chipsHTML(list,cur,attr,label){return list.map(function(x){return '<button type="button" class="chip" data-'+attr+'="'+x.id+'" aria-pressed="'+(cur===x.id)+'">'+label(x)+'</button>'}).join("")}
+function drawEst(){
+  var sel=$("#eFlash"),cur=sel.value;
+  sel.innerHTML='<option value="">'+(lang==="en"?"My own idea":"Mi propia idea")+'</option>'+F.filter(function(f){return !f.taken}).map(function(f){return '<option value="'+f.n+'">Nº '+("0"+f.n).slice(-2)+' · '+T(f.t)+'</option>'}).join("");
+  sel.value=st.pick?String(st.pick):cur;
+  $("#eStyle").innerHTML=chipsHTML(Object.keys(STY).map(function(k){return {id:k}}),st.eStyle,"st",function(x){return T(STY[x.id])});
+  $("#eZone").innerHTML=chipsHTML(ZON,st.eZone,"z",T);
+  calc();
+}
+function calc(){
+  var cm=+$("#eSize").value,z=ZON.filter(function(x){return x.id===st.eZone})[0],v=price(cm,st.eStyle,z.k),lo=r10(v*.88),hi=r10(v*1.12);
+  $("#eSizeO").textContent=cm+" cm";
+  $("#ePrice").textContent=lo===hi?lo+" €":lo+"–"+hi+" €";
+  var h=Math.max(.5,Math.round(v/95*2)/2);$("#eTime").textContent=(h<1?"30 min":String(h).replace(".",",")+" h")+(h>4?(lang==="en"?" · 2 sessions":" · 2 sesiones"):"");
+  var box=$("#scale"),w=box.clientWidth||400,px=Math.min((w-48)/(8.56+30+1.5),(box.clientHeight-70)/30);
+  box.style.setProperty("--cm",px+"px");
+  var c=$(".card",box);c.style.width=8.56*px+"px";c.style.height=5.4*px+"px";
+  var p=$("#piece");p.style.width=p.style.height=cm*px+"px";p.style.left=(16+8.56*px+1.5*px)+"px";
+  var f=F.filter(function(x){return String(x.n)===$("#eFlash").value})[0];
+  p.innerHTML=f?svg(f.k):'<span class="mono">'+cm+' cm</span>';
+}
+
+/* ---------- artistas ---------- */
+function nextDate(off){var d=new Date();d.setDate(d.getDate()+off);while(!HOURS[d.getDay()])d.setDate(d.getDate()+1);return d.toLocaleDateString(lang==="en"?"en-GB":"es-ES",{weekday:"long",day:"numeric",month:"long"})}
+function drawArts(){
+  $("#arts").innerHTML=ARTISTS.map(function(a,i){return '<article class="art-c rv in"><div class="blot"><canvas width="240" height="240" data-seed="'+a.seed+'"></canvas><span class="mono n">0'+(i+1)+'</span></div><h3>'+a.name+'</h3><ul><li><span>'+(lang==="en"?"Speciality":"Especialidad")+'</span><span>'+T(a.sp)+'</span></li><li><span>'+(lang==="en"?"Tattooing for":"Tatuando desde hace")+'</span><span>'+a.yrs+(lang==="en"?" years":" años")+'</span></li><li><span>'+(lang==="en"?"Next free slot":"Próximo hueco")+'</span><span class="red">'+nextDate(a.off)+'</span></li></ul><button type="button" class="btn line" data-book="'+a.id+'">'+(lang==="en"?"Book with ":"Cita con ")+a.name+' →</button></article>'}).join("");
+  $$("#arts canvas").forEach(blot);
+}
+function blot(cv){var c=cv.getContext("2d"),W=cv.width,s=+cv.dataset.seed+Math.floor(Math.random()*1e4);
+  function r(){s=(s*16807)%2147483647;return s/2147483647}
+  c.fillStyle="#fff";c.fillRect(0,0,W,W);c.fillStyle="#000";
+  var x=W/2-8,y=W*.5;for(var i=0;i<70;i++){x+= (r()-.55)*26;y+=(r()-.5)*34;x=Math.max(22,Math.min(W/2,x));y=Math.max(26,Math.min(W-26,y));var q=4+r()*15;
+    c.beginPath();c.arc(x,y,q,0,7);c.fill();c.beginPath();c.arc(W-x,y,q,0,7);c.fill()}
+  for(var j=0;j<14;j++){var a=20+r()*(W/2-20),b=20+r()*(W-40),d=1+r()*3;c.beginPath();c.arc(a,b,d,0,7);c.fill();c.beginPath();c.arc(W-a,b,d,0,7);c.fill()}
+}
+
+/* ---------- cita ---------- */
+var STEPS=[{es:"Idea",en:"Idea"},{es:"Zona",en:"Placement"},{es:"Fecha",en:"Date"},{es:"Datos",en:"Details"}];
+var DAYS=[{id:"mar",es:"Martes",en:"Tuesday"},{id:"mie",es:"Miércoles",en:"Wednesday"},{id:"jue",es:"Jueves",en:"Thursday"},{id:"vie",es:"Viernes",en:"Friday"},{id:"sab",es:"Sábado",en:"Saturday"}];
+function drawBook(){
+  $("#prog").innerHTML=STEPS.map(function(s,i){return '<button type="button" class="mono '+(i<st.step?"done":i===st.step?"cur":"")+'" data-go="'+i+'">0'+(i+1)+' '+T(s)+'</button>'}).join("");
+  $$(".step").forEach(function(e){e.classList.toggle("cur",+e.dataset.step===st.step)});
+  $("#bZone").innerHTML=chipsHTML(ZON,st.bZone,"bz",T);
+  $("#bArt").innerHTML=chipsHTML([{id:"",es:"Me da igual",en:"No preference"}].concat(ARTISTS.map(function(a){return {id:a.id,es:a.name,en:a.name}})),st.bArt,"ba",T);
+  $("#bDays").innerHTML=DAYS.map(function(d){return '<button type="button" class="chip" data-bd="'+d.id+'" aria-pressed="'+(!!st.bDays[d.id])+'">'+T(d)+'</button>'}).join("");
+  $("#bTime").innerHTML=chipsHTML([{id:"",es:"Cualquiera",en:"Any"},{id:"m",es:"Mañana",en:"Morning"},{id:"t",es:"Tarde",en:"Afternoon"}],st.bTime,"bt",T);
+  $("#bPrevB").style.visibility=st.step?"visible":"hidden";
+  $("#bNext").textContent=st.step<3?(lang==="en"?"Next →":"Siguiente →"):(lang==="en"?"Send request →":"Enviar solicitud →");
+  $("#bSizeO").textContent=$("#bSize").value+" cm";
+  msg();
+}
+function msg(){
+  var en=lang==="en",f=F.filter(function(x){return x.n===st.pick})[0],z=ZON.filter(function(x){return x.id===st.bZone})[0],a=ARTISTS.filter(function(x){return x.id===st.bArt})[0];
+  var days=DAYS.filter(function(d){return st.bDays[d.id]}).map(T).join(", "),cm=+$("#bSize").value,v=price(cm,f?f.s:st.eStyle,z.k);
+  var L=[(en?"Hi! I would like to book.":"¡Hola! Quiero pedir cita."),""];
+  if(f)L.push((en?"Flash: ":"Flash: ")+"Nº "+("0"+f.n).slice(-2)+" · "+T(f.t));
+  L.push((en?"Idea: ":"Idea: ")+($("#bIdea").value.trim()||"…"));
+  if($("#bFile").files&&$("#bFile").files[0])L.push(en?"Reference: 1 image attached":"Referencia: 1 imagen adjunta");
+  L.push((en?"Placement: ":"Zona: ")+T(z)+" · "+cm+" cm");
+  L.push((en?"Artist: ":"Artista: ")+(a?a.name:(en?"no preference":"me da igual")));
+  L.push((en?"Days: ":"Días: ")+(days||(en?"any":"cualquiera"))+(st.bTime?" ("+(st.bTime==="m"?(en?"morning":"mañana"):(en?"afternoon":"tarde"))+")":""));
+  L.push((en?"Online estimate: ":"Presupuesto online: ")+r10(v*.88)+"–"+r10(v*1.12)+" €");
+  L.push("",($("#bName").value.trim()||(en?"Name":"Nombre"))+" · "+($("#bTel").value.trim()||(en?"phone":"teléfono")));
+  $("#bMsg").textContent=L.join("\n");
+}
+
+/* ---------- cuidados, faq, horario ---------- */
+var CARE=[
+ {t:{es:"Primeras 24 h",en:"First 24 h"},l:[{es:"Deja el apósito puesto el tiempo que te diga tu tatuador.",en:"Keep the dressing on for as long as your artist tells you."},{es:"Lávalo con agua tibia y jabón neutro, con la mano limpia.",en:"Wash it with lukewarm water and mild soap, using a clean hand."},{es:"Sécalo a toques con papel. Sin frotar y sin toalla.",en:"Pat it dry with paper. No rubbing, no towel."}]},
+ {t:{es:"Días 2 a 14",en:"Days 2 to 14"},l:[{es:"Lávalo dos o tres veces al día y aplica una capa fina de crema.",en:"Wash it two or three times a day and apply a thin layer of cream."},{es:"Nada de mar, piscina, sauna ni sol directo.",en:"No sea, pool, sauna or direct sun."},{es:"Pica y se pela: es normal. No rasques ni arranques las costras.",en:"It itches and peels: that is normal. Do not scratch or pick the scabs."},{es:"Ropa holgada y de algodón sobre la zona.",en:"Loose cotton clothing over the area."}]},
+ {t:{es:"Desde la semana 3",en:"From week 3"},l:[{es:"Hidrata la piel a diario.",en:"Moisturise the skin daily."},{es:"Protector solar SPF 50 siempre que le dé el sol.",en:"SPF 50 sunscreen whenever it is in the sun."},{es:"Repaso gratis durante los tres primeros meses si hace falta.",en:"Free touch-up in the first three months if needed."}]}];
+var FAQ=[
+ {q:{es:"¿Duele?",en:"Does it hurt?"},a:{es:"Depende de la zona y de cada persona. Antebrazo, hombro y gemelo se llevan bien; costillas, manos y pies molestan más. Paramos siempre que lo necesites.",en:"It depends on the area and on you. Forearm, shoulder and calf are easy; ribs, hands and feet are harder. We stop whenever you need."}},
+ {q:{es:"¿Qué es la señal?",en:"What is the deposit?"},a:{es:"Son 50 € que reservan tu fecha y pagan el tiempo de dibujo. Se descuentan del precio final. Si cambias la cita con 48 horas de aviso, la conservas.",en:"It is €50 that holds your date and pays for drawing time. It comes off the final price. Reschedule with 48 hours’ notice and you keep it."}},
+ {q:{es:"¿Puedo ir sin cita?",en:"Can I come without booking?"},a:{es:"Los sábados de 11:00 a 15:00, para flash de estudio y piezas pequeñas, por orden de llegada.",en:"Saturdays from 11:00 to 15:00, for studio flash and small pieces, first come first served."}},
+ {q:{es:"¿Tapáis tatuajes antiguos?",en:"Do you cover old tattoos?"},a:{es:"Sí. Envíanos una foto con buena luz y te decimos con sinceridad qué se puede hacer y qué no.",en:"Yes. Send us a well-lit photo and we will tell you honestly what can and cannot be done."}},
+ {q:{es:"¿Tatuáis a menores?",en:"Do you tattoo minors?"},a:{es:"Tatuamos a mayores de 18 años. Si eres menor, escríbenos y te explicamos los requisitos.",en:"We tattoo people over 18. If you are under age, write to us and we will explain the requirements."}}];
+var tab=0;
+function drawCare(){
+  $("#tabs").innerHTML=CARE.map(function(c,i){return '<button type="button" role="tab" aria-selected="'+(i===tab)+'" data-tab="'+i+'">'+T(c.t)+'</button>'}).join("");
+  $("#careList").innerHTML=CARE[tab].l.map(function(x,i){return '<li style="animation-delay:'+i*.06+'s"><span>'+T(x)+'</span></li>'}).join("");
+}
+function drawFaq(){var open=$$("#faq details").map(function(d){return d.open});
+  $("#faq").innerHTML=FAQ.map(function(f,i){return '<details'+((open.length?open[i]:i===0)?" open":"")+'><summary>'+T(f.q)+'</summary><p>'+T(f.a)+'</p></details>'}).join("")}
+function madrid(){var p={};new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Madrid",weekday:"short",hour:"2-digit",minute:"2-digit",hour12:false}).formatToParts(new Date()).forEach(function(x){p[x.type]=x.value});
+  return {d:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(p.weekday),h:+p.hour+(+p.minute)/60}}
+function drawHours(){
+  var en=lang==="en",n=madrid(),names=en?["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]:["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
+  var order=[1,2,3,4,5,6,0];
+  $("#hours").innerHTML=order.map(function(d){var h=HOURS[d];return '<tr class="'+(d===n.d?"today":"")+'"><td>'+names[d]+'</td><td>'+(h?h[0]+":00 – "+h[1]+":00":(en?"Closed":"Cerrado"))+'</td></tr>'}).join("");
+  var h=HOURS[n.d],open=h&&n.h>=h[0]&&n.h<h[1],txt;
+  if(open)txt=(en?"Open · closes at ":"Abierto · cierra a las ")+h[1]+":00";
+  else{var k=n.d,i=0;if(!(h&&n.h<h[0])){do{k=(k+1)%7;i++}while(!HOURS[k]&&i<8)}txt=(en?"Closed · opens ":"Cerrado · abre ")+(k===n.d?(en?"today":"hoy"):names[k].toLowerCase())+(en?" at ":" a las ")+HOURS[k][0]+":00"}
+  $("#openNow").innerHTML='<i class="dot'+(open?"":" off")+'"></i>'+txt;
+}
+
+/* ---------- idioma ---------- */
+function setLang(l){lang=l;document.documentElement.lang=l;
+  $$("[data-en]").forEach(function(el){if(el.dataset.es===undefined)el.dataset.es=el.innerHTML;el.innerHTML=l==="en"?el.dataset.en:el.dataset.es});
+  $$("[data-en-ph]").forEach(function(el){if(!el.dataset.esPh)el.dataset.esPh=el.placeholder;el.placeholder=l==="en"?el.dataset.enPh:el.dataset.esPh});
+  $$(".lang button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.lang===l)});
+  $("#stampT").textContent=l==="en"?"WALK-INS · SATURDAYS 11 TO 3 · NO BOOKING ·":"WALK-INS · SÁBADOS 11 A 15 · SIN CITA ·";
+  all();
+}
+function tick(){var w=lang==="en"?["Custom design","Studio flash","Cover-up","Piercing","Saturday walk-ins","Fine line","Traditional","Blackwork"]:["Diseño a medida","Flash de estudio","Cover-up","Piercing","Sábados sin cita","Línea fina","Tradicional","Blackwork"];
+  $("#tick").innerHTML=[0,1].map(function(){return w.map(function(x){return "<span>"+x+"</span><span>✶</span>"}).join("")}).join("")}
+function all(){tick();drawChips();drawFlash();drawStyles();drawEst();drawArts();drawBook();drawCare();drawFaq();drawHours();showPick()}
+
+/* ---------- init ---------- */
+safe(function(){
+  $("#heroArt .art").innerHTML='<g class="ln"><g transform="translate(20 50) scale(3)" style="stroke-width:0.87">'+M.daga+'</g><g transform="translate(8 8) scale(1)" style="stroke-width:2.6">'+M.luna+'</g><g transform="translate(276 8) scale(1)" style="stroke-width:2.6">'+M.sol+'</g><g transform="translate(0 170) scale(1.05)" style="stroke-width:2.48">'+M.rosa+'</g><g transform="translate(274 170) scale(1.05)" style="stroke-width:2.48">'+M.polilla+'</g><g transform="translate(8 340) scale(1)" style="stroke-width:2.6">'+M.ola+'</g><g transform="translate(278 340) scale(1)" style="stroke-width:2.6">'+M.olivo+'</g></g>';
+  norm($("#heroArt"));all();
+  requestAnimationFrame(function(){requestAnimationFrame(function(){$("#heroArt").classList.add("in")})});
+},"contenido");
+
+safe(function(){
+  $$(".lang button").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang)})});
+  $("#fChips").addEventListener("click",function(e){var b=e.target.closest(".chip");if(!b)return;st.fStyle=b.dataset.s;drawChips();drawFlash()});
+  $("#flashGrid").addEventListener("click",function(e){var b=e.target.closest(".fl");if(!b||b.classList.contains("taken"))return;var n=+b.dataset.n;st.pick=st.pick===n?null:n;
+    var f=F.filter(function(x){return x.n===st.pick})[0];if(f){st.eStyle=f.s;$("#eSize").value=$("#bSize").value=f.cm}
+    $$("#flashGrid .fl").forEach(function(x){x.setAttribute("aria-pressed",+x.dataset.n===st.pick)});drawEst();drawBook();showPick()});
+  $("#pickX").addEventListener("click",function(){st.pick=null;$$("#flashGrid .fl").forEach(function(x){x.setAttribute("aria-pressed","false")});drawEst();drawBook();showPick()});
+  $("#pickGo").addEventListener("click",function(){$("#pick").classList.remove("on")});
+  $("#styles").addEventListener("click",function(e){var b=e.target.closest(".sty");if(!b)return;openSty=+b.dataset.i;$$("#styles .sty").forEach(function(x,i){x.setAttribute("aria-expanded",i===openSty)})});
+  if(matchMedia("(hover:hover)").matches)$("#styles").addEventListener("pointerover",function(e){var b=e.target.closest(".sty");if(b&&+b.dataset.i!==openSty)b.click()});
+  $("#est").addEventListener("click",function(e){var b=e.target.closest(".chip");if(!b)return;if(b.dataset.st)st.eStyle=b.dataset.st;if(b.dataset.z)st.eZone=b.dataset.z;drawEst()});
+  $("#eSize").addEventListener("input",calc);
+  $("#eFlash").addEventListener("change",function(e){st.pick=e.target.value?+e.target.value:null;var f=F.filter(function(x){return x.n===st.pick})[0];if(f){st.eStyle=f.s;$("#eSize").value=f.cm}drawFlash();drawEst();drawBook();showPick()});
+  $("#eCta").addEventListener("click",function(){st.bZone=st.eZone;$("#bSize").value=$("#eSize").value;drawBook()});
+  $("#arts").addEventListener("click",function(e){var b=e.target.closest("[data-book]");if(!b)return;st.bArt=b.dataset.book;st.step=Math.max(st.step,0);drawBook();$("#cita").scrollIntoView()});
+  var bk=$("#book");
+  bk.addEventListener("click",function(e){var c=e.target.closest(".chip"),g=e.target.closest("[data-go]");
+    if(g){st.step=+g.dataset.go;$("#bErr").textContent="";drawBook();return}
+    if(!c)return;var d=c.dataset;if("bz" in d)st.bZone=d.bz;if("ba" in d)st.bArt=d.ba;if("bt" in d)st.bTime=d.bt;if(d.bd)st.bDays[d.bd]=!st.bDays[d.bd];drawBook()});
+  bk.addEventListener("input",function(){$("#bSizeO").textContent=$("#bSize").value+" cm";msg()});
+  $("#bFile").addEventListener("change",function(e){var f=e.target.files[0],im=$("#bPrev");if(!f){im.hidden=true;return}try{im.src=URL.createObjectURL(f);im.hidden=false}catch(x){}$("#bFileN").textContent=f.name;msg()});
+  $("#bPrevB").addEventListener("click",function(){st.step=Math.max(0,st.step-1);$("#bErr").textContent="";drawBook()});
+  bk.addEventListener("submit",function(e){e.preventDefault();var en=lang==="en",err="";
+    if(st.step===0&&!st.pick&&$("#bIdea").value.trim().length<4)err=en?"Tell us your idea in a few words, or pick a flash design above.":"Cuéntanos tu idea en pocas palabras, o elige un diseño de flash arriba.";
+    if(st.step===3){if(!$("#bName").value.trim()||$("#bTel").value.replace(/\D/g,"").length<9)err=en?"We need your name and a phone number to reply.":"Necesitamos tu nombre y un teléfono para responderte.";else if(!$("#bAge").checked)err=en?"Please confirm that you are over 18.":"Confirma que eres mayor de 18 años."}
+    $("#bErr").textContent=err;if(err)return;
+    if(st.step<3){st.step++;drawBook()}else{$("#bSent").classList.add("on")}});
+  $("#tabs").addEventListener("click",function(e){var b=e.target.closest("[data-tab]");if(!b)return;tab=+b.dataset.tab;drawCare()});
+  addEventListener("resize",calc);
+},"eventos");
+
+/* reveal + trazo, con red de seguridad */
+safe(function(){var els=$$(".rv:not(.in),.draw:not(.in)").filter(function(e){return e.id!=="heroArt"});
+  $$("#flashGrid .fl").forEach(function(e){e.classList.remove("in");els.push(e)});
+  if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in")});return}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.05});
+  els.forEach(function(e){io.observe(e)});
+  setTimeout(function(){els.forEach(function(e){e.classList.add("in")})},6000);
+},"reveal");
+
+/* rastro de tinta en la portada */
+safe(function(){if(!matchMedia("(hover:hover) and (pointer:fine)").matches)return;
+  var cv=$("#ink"),hero=cv.parentNode,c=cv.getContext("2d"),drops=[],run=false,lx=0,ly=0,dpr=Math.min(2,devicePixelRatio||1);
+  function size(){cv.width=hero.clientWidth*dpr;cv.height=hero.clientHeight*dpr;c.setTransform(dpr,0,0,dpr,0,0)}
+  size();addEventListener("resize",size);
+  hero.addEventListener("pointermove",function(e){var r=hero.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,d=Math.hypot(x-lx,y-ly);if(d<14)return;lx=x;ly=y;
+    drops.push({x:x,y:y,r:3+Math.min(16,d*.22),a:.85});if(Math.random()<.3)drops.push({x:x+(Math.random()-.5)*46,y:y+(Math.random()-.5)*46,r:1+Math.random()*3,a:.8});
+    if(drops.length>140)drops.splice(0,drops.length-140);if(!run){run=true;requestAnimationFrame(loop)}});
+  function loop(){c.clearRect(0,0,cv.width,cv.height);drops=drops.filter(function(d){return d.a>.02});
+    drops.forEach(function(d){d.a*=.955;d.r*=1.004;c.globalAlpha=d.a;c.fillStyle="#0C0C0D";c.beginPath();c.arc(d.x,d.y,d.r,0,7);c.fill()});
+    c.globalAlpha=1;if(drops.length)requestAnimationFrame(loop);else run=false}
+},"tinta");
+setInterval(function(){safe(drawHours,"horario")},60000);
+})();
+</script>
+</body>
+</html>

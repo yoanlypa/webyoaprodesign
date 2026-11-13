@@ -24,7 +24,7 @@ Cada pieza tiene una pantalla de escritorio y un móvil flotante:
 - `assets/img/<id>.webp` → escritorio, captura de página completa a 1440 px de ancho
 - `assets/img/<id>-m.webp` → móvil, captura de página completa a 390 px (780 px reales)
 
-Ids: `sculptology`, `diana-noris`, `vip-team`, `kerkhu`, `walk-ink`, `inkspiration`. Si falta una imagen, se ve un marcador con el nombre del proyecto. Las capturas largas se recorren solas de arriba abajo cuando la cámara llega a la pieza.
+Ids: `sculptology`, `diana-noris`, `almara`, `kerkhu`, `marea-negra`. Si falta una imagen, se ve un marcador con el nombre del proyecto. Las capturas largas se recorren solas de arriba abajo cuando la cámara llega a la pieza.
 
 Ya están las de **Sculptology**, **Diana Noris**, **Vip Team** y **KERKHU** (sacadas de sus repos de GitHub). Para el resto:
 `python tools/capturar.py walk-ink=https://... inkspiration=https://...`
