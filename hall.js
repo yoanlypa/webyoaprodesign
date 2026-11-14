@@ -343,7 +343,7 @@
         c.strokeStyle = "rgba(236,235,230,0.18)"; c.lineWidth = 3; c.strokeRect(1.5, 1.5, w - 3, h - 3);
         c.textBaseline = "middle"; c.textAlign = "center";
         c.font = mono(58, 500); setSpacing(c, "14px");
-        var a = "SALA " + rn, b = "  ·  " + room.name.toUpperCase();
+        var a = (window.__t ? window.__t("SALA") : "SALA") + " " + rn, b = "  ·  " + room.name.toUpperCase();
         var wa = c.measureText(a).width, wb = c.measureText(b).width;
         var x0 = w / 2 - (wa + wb) / 2;
         c.textAlign = "left";

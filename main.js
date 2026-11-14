@@ -127,19 +127,20 @@
   var TOTAL = (B.exhibits || []).length;
   function two(n) { return n < 10 ? "0" + n : "" + n; }
 
+  var T = window.__t || function (x) { return x; };
   function placeName(key) {
-    if (key === "hero") return "Recepción";
-    if (key === "intro") return "Vestíbulo";
-    if (key.indexOf("room-") === 0) { var n = +key.split("-")[1]; return "Sala " + two(n) + " · Acceso"; }
+    if (key === "hero") return T("Recepción");
+    if (key === "intro") return T("Vestíbulo");
+    if (key.indexOf("room-") === 0) { var n = +key.split("-")[1]; return T("Sala") + " " + two(n) + " · " + T("Acceso"); }
     if (key.indexOf("ex-") === 0) {
       var e = EX_INDEX[key.slice(3)];
-      return e ? "Sala " + two(e.ex.room) + " · Pieza " + two(e.i + 1) + "/" + two(TOTAL) : "Galería";
+      return e ? T("Sala") + " " + two(e.ex.room) + " · " + T("Pieza") + " " + two(e.i + 1) + "/" + two(TOTAL) : T("Galería");
     }
-    if (key === "services") return "Atrio · Servicios";
-    if (key === "process") return "Atrio · Método";
-    if (key === "plans") return "Atrio · Planes";
-    if (key === "contact") return "Salida · Contacto";
-    return "Galería";
+    if (key === "services") return T("Atrio · Servicios");
+    if (key === "process") return T("Atrio · Método");
+    if (key === "plans") return T("Atrio · Planes");
+    if (key === "contact") return T("Salida · Contacto");
+    return T("Galería");
   }
 
   var hudMarker = null, hudOn = false;
@@ -238,7 +239,7 @@
 
   function updateTourLabel(key) {
     if (!pillLabel) return;
-    pillLabel.textContent = "Visita guiada · " + placeName(key);
+    pillLabel.textContent = T("Visita guiada") + " · " + placeName(key);
   }
   function stopTour() {
     if (!tour.on) return;
@@ -246,7 +247,7 @@
     clearTimeout(tour.timer);
     stopScrollAnim();
     if (pill) pill.hidden = true;
-    tourBtns.forEach(function (b) { b.textContent = "Iniciar visita guiada"; });
+    tourBtns.forEach(function (b) { b.textContent = T("Iniciar visita guiada"); });
   }
   function nextStop() {
     if (!tour.on) return;
@@ -266,7 +267,7 @@
     for (var k = 0; k < tour.list.length; k++) { if (targetFor(tour.list[k]) > y + 40) { tour.i = k; break; } }
     tour.on = true;
     if (pill) pill.hidden = false;
-    tourBtns.forEach(function (b) { b.textContent = "Visita en curso…"; });
+    tourBtns.forEach(function (b) { b.textContent = T("Visita en curso…"); });
     nextStop();
   }
   function initTour() {
@@ -298,7 +299,7 @@
     $$("[data-plan]").forEach(function (a) {
       a.addEventListener("click", function () {
         var msg = form.querySelector("[name=mensaje]");
-        if (msg && !msg.value) msg.value = "Me interesa el " + a.getAttribute("data-plan").toLowerCase() + ".";
+        if (msg && !msg.value) msg.value = window.__LANG__ === "en" ? "I'm interested in the " + T(a.getAttribute("data-plan")).toLowerCase() + "." : "Me interesa el " + a.getAttribute("data-plan").toLowerCase() + ".";
       });
     });
     form.addEventListener("submit", function (e) {
@@ -312,13 +313,18 @@
         if (bad) ok = false;
       });
       if (!ok) {
-        if (note) { note.textContent = "Indica tu nombre y tu negocio para poder responderte."; note.classList.add("is-error"); }
+        if (note) { note.textContent = T("Indica tu nombre y tu negocio para poder responderte."); note.classList.add("is-error"); }
         return;
       }
       if (note) { note.textContent = baseNote; note.classList.remove("is-error"); }
       var v = function (n) { var el = form.querySelector("[name=" + n + "]"); return el ? el.value.trim() : ""; };
       var web = (form.querySelector("[name=web]:checked") || {}).value || "";
-      var text = "Hola, soy " + v("nombre") + " (" + v("negocio") + "). " +
+      var EN = window.__LANG__ === "en";
+      var text = EN
+        ? "Hi, I'm " + v("nombre") + " (" + v("negocio") + "). " +
+          (web === "Sí" ? "I already have a website and want to improve it." : "I don't have a website yet.") +
+          (v("mensaje") ? " " + v("mensaje") : "") + " I found you through the YOA PRO gallery."
+        : "Hola, soy " + v("nombre") + " (" + v("negocio") + "). " +
         (web === "Sí" ? "Ya tengo web y quiero mejorarla." : "Todavía no tengo web.") +
         (v("mensaje") ? " " + v("mensaje") : "") + " Vengo de la galería de YOA PRO.";
       window.open("https://wa.me/" + (B.phone || "34603379870") + "?text=" + encodeURIComponent(text), "_blank", "noopener");

@@ -7,6 +7,9 @@
   <meta name="description" content="YOA PRO diseña, publica y mantiene webs para negocios de la Costa del Sol. Recorre nuestra galería de proyectos en 3D." />
   <meta name="theme-color" content="#0b0c0d" />
   <link rel="canonical" href="https://yoapro.site/" />
+  <link rel="alternate" hreflang="es" href="https://yoapro.site/?lang=es" />
+  <link rel="alternate" hreflang="en" href="https://yoapro.site/?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://yoapro.site/" />
   <meta property="og:title" content="YOA PRO · Galería de webs" />
   <meta property="og:description" content="Diseño y desarrollo web para negocios de la Costa del Sol." />
   <meta property="og:type" content="website" />
@@ -18,11 +21,11 @@
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://yoapro.site/assets/og.jpg" />
-  <link rel="icon" href="assets/favicon.svg?v=20261025d" type="image/svg+xml" />
+  <link rel="icon" href="assets/favicon.svg?v=20261114" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20261025d" />
+  <link rel="stylesheet" href="styles.css?v=20261114" />
   <script>document.documentElement.classList.remove("no-js"); document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -58,6 +61,10 @@
       <a href="#planes">Planes</a>
       <a href="#contacto">Contacto</a>
     </nav>
+    <div class="lang-switch" data-lang-switch role="group" aria-label="Idioma / Language">
+      <button type="button" data-lang="es" aria-label="Español" title="Español"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#c60b1e"/><rect y="5" width="30" height="10" fill="#ffc400"/></svg></button>
+      <button type="button" data-lang="en" aria-label="English" title="English"><svg viewBox="0 0 60 40" aria-hidden="true"><clipPath id="ukc"><rect width="60" height="40"/></clipPath><g clip-path="url(#ukc)"><rect width="60" height="40" fill="#012169"/><path d="M0 0l60 40M60 0L0 40" stroke="#fff" stroke-width="8"/><path d="M0 0l60 40M60 0L0 40" stroke="#c8102e" stroke-width="3"/><path d="M30 0v40M0 20h60" stroke="#fff" stroke-width="12"/><path d="M30 0v40M0 20h60" stroke="#c8102e" stroke-width="7"/></g></svg></button>
+    </div>
     <a class="btn btn-primary btn-sm nav-cta" href="#contacto">Solicitar propuesta</a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu"><span></span><span></span><span class="sr-only">Menú</span></button>
   </header>
@@ -331,8 +338,9 @@
   </footer>
 
   <script defer src="lib/three.min.js"></script>
-  <script defer src="lib/manifest.js?v=20261025d"></script>
-  <script defer src="hall.js?v=20261025d"></script>
-  <script defer src="main.js?v=20261025d"></script>
+  <script defer src="lib/manifest.js?v=20261114"></script>
+  <script defer src="lib/i18n.js?v=20261114"></script>
+  <script defer src="hall.js?v=20261114"></script>
+  <script defer src="main.js?v=20261114"></script>
 </body>
 </html>
